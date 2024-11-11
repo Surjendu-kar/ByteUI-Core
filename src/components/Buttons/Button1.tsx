@@ -179,7 +179,7 @@ const Button1 = () => {
     </>
   );
   
-  export default ButtonDemo;`;
+export default ButtonDemo;`;
 
   return (
     <CodeViewer shortCode={shortCode} fullCode={fullCode} demo={ButtonDemo} />

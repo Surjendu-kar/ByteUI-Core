@@ -98,7 +98,7 @@ const CodeViewer: FC<CodeViewerProps> = ({
             fontFamily: "monospace",
             fontSize: "0.875rem",
             color: "#cdd6f4",
-            maxHeight: isExpanded ? "400px" : "none",
+            maxHeight: isExpanded ? "300px" : "none",
             overflow: "auto",
             "&:hover": {
               border: "1px solid #3b82f680",
