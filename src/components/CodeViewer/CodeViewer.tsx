@@ -30,8 +30,6 @@ const CodeViewer: FC<CodeViewerProps> = ({
       sx={{
         maxWidth: 800,
         mx: "auto",
-        bgcolor: "#1a1b1e",
-        borderRadius: 2,
       }}
     >
       {/* Demo Section */}
@@ -39,9 +37,12 @@ const CodeViewer: FC<CodeViewerProps> = ({
         <Box
           sx={{
             p: 3,
-            borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
             display: "flex",
             justifyContent: "center",
+            bgcolor: "#19191b",
+            borderTopLeftRadius: 5,
+            borderTopRightRadius: 5,
           }}
         >
           <Demo />
@@ -57,6 +58,7 @@ const CodeViewer: FC<CodeViewerProps> = ({
             justifyContent: "space-between",
             alignItems: "center",
             p: 1,
+            border: "1px solid rgba(255, 255, 255, 0.1)",
           }}
         >
           <Button
@@ -94,7 +96,9 @@ const CodeViewer: FC<CodeViewerProps> = ({
             position: "relative",
             p: 2,
             border: "1px solid rgba(255, 255, 255, 0.1)",
-            borderRadius: 2,
+            borderBottomLeftRadius: 5,
+            borderBottomRightRadius: 5,
+
             fontFamily: "monospace",
             fontSize: "0.875rem",
             color: "#cdd6f4",
