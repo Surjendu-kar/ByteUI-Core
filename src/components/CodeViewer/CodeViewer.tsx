@@ -91,6 +91,7 @@ const CodeViewer: FC<CodeViewerProps> = ({
         {/* Code Content */}
         <Box
           sx={{
+            position: "relative",
             p: 2,
             border: "1px solid rgba(255, 255, 255, 0.1)",
             borderRadius: 2,
@@ -102,19 +103,24 @@ const CodeViewer: FC<CodeViewerProps> = ({
             "&:hover": {
               border: "1px solid #3b82f680",
             },
+            scrollbarWidth: "thin",
+            scrollbarColor: "rgba(255, 255, 255, 0.1) transparent",
             "&::-webkit-scrollbar": {
-              width: "8px",
-              height: "8px",
+              width: "6px",
+              height: "6px",
             },
             "&::-webkit-scrollbar-track": {
               background: "transparent",
             },
+            "&::-webkit-scrollbar-corner": {
+              background: "transparent",
+            },
             "&::-webkit-scrollbar-thumb": {
               background: "rgba(255, 255, 255, 0.1)",
-              borderRadius: "4px",
-            },
-            "&::-webkit-scrollbar-thumb:hover": {
-              background: "rgba(255, 255, 255, 0.2)",
+              borderRadius: "3px",
+              "&:hover": {
+                background: "rgba(255, 255, 255, 0.2)",
+              },
             },
           }}
         >

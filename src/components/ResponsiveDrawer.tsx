@@ -64,7 +64,7 @@ export default function ResponsiveDrawer(props: Props) {
       <CssBaseline />
       <AppBar
         position="fixed"
-        elevation={0} // Removes shadow
+        elevation={0}
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
@@ -84,8 +84,6 @@ export default function ResponsiveDrawer(props: Props) {
           </IconButton>
         </Toolbar>
         <Divider />
-
-        <Buttons />
       </AppBar>
       <Box
         component="nav"
@@ -131,9 +129,10 @@ export default function ResponsiveDrawer(props: Props) {
           flexGrow: 1,
           p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
+          mt: "5rem",
         }}
       >
-        <Toolbar />
+        <Buttons />
       </Box>
     </Box>
   );
