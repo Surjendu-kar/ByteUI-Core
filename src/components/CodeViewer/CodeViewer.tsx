@@ -1,9 +1,23 @@
 import { useState, FC, ComponentType } from "react";
-import { Box, Paper, IconButton, Button } from "@mui/material";
+import { Box, Paper, IconButton, Button, styled } from "@mui/material";
 import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
 import CheckIcon from "@mui/icons-material/Check";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+
+const ExpandButton = styled(Button)(() => ({
+  backgroundColor: "#1a1b26",
+  color: "#89b4fa",
+  padding: "2px 15px",
+  fontSize: "12px",
+  textTransform: "none",
+  border: "1px solid #2a2b36",
+  borderRadius: "15px",
+  boxShadow: "0 0 10px rgba(137, 180, 250, 0.1)",
+  "&:hover": {
+    backgroundColor: "#2a2b36",
+    borderColor: "#89b4fa",
+    boxShadow: "0 0 15px rgba(137, 180, 250, 0.2)",
+  },
+}));
 
 interface CodeViewerProps {
   shortCode: string;
@@ -55,25 +69,16 @@ const CodeViewer: FC<CodeViewerProps> = ({
         <Box
           sx={{
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "right",
             alignItems: "center",
             p: 1,
+            gap: 1,
             border: "1px solid rgba(255, 255, 255, 0.1)",
           }}
         >
-          <Button
-            startIcon={
-              isExpanded ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />
-            }
-            onClick={() => setIsExpanded(!isExpanded)}
-            sx={{
-              color: "#89b4fa",
-              "&:hover": { bgcolor: "rgba(137, 180, 250, 0.1)" },
-              textTransform: "none",
-            }}
-          >
+          <ExpandButton onClick={() => setIsExpanded(!isExpanded)}>
             {isExpanded ? "Collapse code" : "Expand code"}
-          </Button>
+          </ExpandButton>
           <IconButton
             size="small"
             onClick={handleCopy}
@@ -83,9 +88,9 @@ const CodeViewer: FC<CodeViewerProps> = ({
             }}
           >
             {copied ? (
-              <CheckIcon fontSize="small" />
+              <CheckIcon fontSize="small" sx={{ fontSize: 16 }} />
             ) : (
-              <ContentCopyOutlinedIcon fontSize="small" />
+              <ContentCopyOutlinedIcon fontSize="small" sx={{ fontSize: 16 }} />
             )}
           </IconButton>
         </Box>
@@ -98,7 +103,6 @@ const CodeViewer: FC<CodeViewerProps> = ({
             border: "1px solid rgba(255, 255, 255, 0.1)",
             borderBottomLeftRadius: 5,
             borderBottomRightRadius: 5,
-
             fontFamily: "monospace",
             fontSize: "0.875rem",
             color: "#cdd6f4",
