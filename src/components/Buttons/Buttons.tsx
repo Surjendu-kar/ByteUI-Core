@@ -1,20 +1,21 @@
-import { Box } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import Button2 from "./Button2";
 import Button1 from "./Button1";
 
 function Buttons() {
   return (
-    <Box
+    <Stack
       sx={{
         width: "100%",
-        display: "flex",
-        justifyContent: "center",
         alignItems: "center",
+        gap: 5,
       }}
     >
-      <Button1>Button 1</Button1>
-      <Button2>Button 2</Button2>
-    </Box>
+      <Box>
+        <Button1 />
+      </Box>
+      <Button2 />
+    </Stack>
   );
 }
 

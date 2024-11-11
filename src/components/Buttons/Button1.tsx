@@ -1,11 +1,7 @@
-import React, { ReactNode } from "react";
-import { Button, styled, ButtonProps } from "@mui/material";
+import { Button, styled, Typography } from "@mui/material";
 
-interface HoverButtonProps extends ButtonProps {
-  children: ReactNode;
-}
-
-const AnimatedButton = styled(Button)(() => ({
+const LeftArrowButton = styled(Button)(() => ({
+  background: "red",
   borderRadius: 4,
   border: "none",
   color: "#FFFFFF",
@@ -14,17 +10,51 @@ const AnimatedButton = styled(Button)(() => ({
   padding: "7px",
   width: "150px",
   transition: "all 0.5s",
-  cursor: "pointer",
+  textTransform: "capitalize",
   margin: "5px",
   position: "relative",
-  "& .buttonText": {
-    cursor: "pointer",
+  "& p": {
+    display: "inline-block",
+    position: "relative",
+    transition: "0.5s",
+    paddingLeft: "0",
+  },
+  "& p:before": {
+    content: '"«"',
+    position: "absolute",
+    opacity: 0,
+    top: "-2px",
+    left: "-20px",
+    transition: "0.5s",
+  },
+  "&:hover p": {
+    paddingLeft: "25px",
+  },
+  "&:hover p:before": {
+    opacity: 1,
+    left: 0,
+  },
+}));
+
+const RightArrowButton = styled(Button)(() => ({
+  borderRadius: 4,
+  border: "none",
+  color: "#FFFFFF",
+  textAlign: "center",
+  fontSize: "15px",
+  padding: "7px",
+  width: "150px",
+  transition: "all 0.5s",
+  textTransform: "capitalize",
+  margin: "5px",
+  position: "relative",
+  "& p": {
     display: "inline-block",
     position: "relative",
     transition: "0.5s",
     paddingRight: "0",
   },
-  "& .buttonText:after": {
+  "& p:after": {
     content: '"»"',
     position: "absolute",
     opacity: 0,
@@ -32,20 +62,25 @@ const AnimatedButton = styled(Button)(() => ({
     right: "-20px",
     transition: "0.5s",
   },
-  "&:hover .buttonText": {
+  "&:hover p": {
     paddingRight: "25px",
   },
-  "&:hover .buttonText:after": {
+  "&:hover p:after": {
     opacity: 1,
     right: 0,
   },
 }));
 
-const Button1: React.FC<HoverButtonProps> = ({ children, ...props }) => {
+const Button1 = () => {
   return (
-    <AnimatedButton variant="contained" {...props}>
-      <span className="buttonText">{children}</span>
-    </AnimatedButton>
+    <>
+      <LeftArrowButton variant="contained">
+        <Typography>left</Typography>
+      </LeftArrowButton>
+      <RightArrowButton variant="contained">
+        <Typography>right</Typography>
+      </RightArrowButton>
+    </>
   );
 };
 

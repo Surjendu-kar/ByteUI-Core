@@ -1,9 +1,4 @@
-import { Button, styled, ButtonProps } from "@mui/material";
-import { ReactNode } from "react";
-
-interface HoverButtonProps extends ButtonProps {
-  children: ReactNode;
-}
+import { Button, styled } from "@mui/material";
 
 const StyledButton = styled(Button)(() => ({
   height: "40px",
@@ -47,8 +42,8 @@ const StyledButton = styled(Button)(() => ({
   },
 }));
 
-const Button2: React.FC<HoverButtonProps> = ({ children, ...props }) => {
-  return <StyledButton {...props}>{children}</StyledButton>;
+const Button2 = () => {
+  return <StyledButton>Button</StyledButton>;
 };
 
 export default Button2;
