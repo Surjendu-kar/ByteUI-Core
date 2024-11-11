@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button, styled, keyframes, Typography } from "@mui/material";
+import { Box, Button, styled, keyframes, Typography } from "@mui/material";
 import CodeViewer from "../CodeViewer/CodeViewer";
 
 const glowAnimation = keyframes`
@@ -11,7 +11,7 @@ const glowAnimation = keyframes`
   }
 `;
 
-const StyledButton = styled(Button)(() => ({
+const StyledRedButton = styled(Button)(() => ({
   backgroundColor: "#450a0a",
   color: "#f87171",
   border: "1px solid #f87171",
@@ -55,14 +55,34 @@ const StyledButton = styled(Button)(() => ({
   },
 }));
 
+const StyledGreenButton = styled(StyledRedButton)(() => ({
+  backgroundColor: "#052e16", // bg-green-950
+  color: "#4ade80", // text-green-400
+  border: "1px solid #4ade80", // border border-green-400
+
+  "& .glow-effect": {
+    backgroundColor: "#4ade80", // bg-green-400
+    boxShadow: "0 0 10px 10px rgba(74, 222, 128, 0.3)", // shadow-green-400
+  },
+
+  "&:hover .glow-effect": {
+    animation: `${glowAnimation} 0.5s forwards`,
+  },
+}));
+
 const Button7: FC = () => {
-  const shortCode = `<StyledButton>
-  <span className="glow-effect"></span>
-  <Typography>Hover Me</Typography>
-</StyledButton>`;
+const shortCode = `<StyledRedButton>
+  <Typography className="glow-effect"></Typography>
+  <Typography>Red Button</Typography>
+</StyledRedButton>
+
+<StyledGreenButton>
+  <Typography className="glow-effect"></Typography>
+  <Typography>Green Button</Typography>
+</StyledGreenButton>`;
 
   const fullCode = `import { FC } from "react";
-import { Button, styled, keyframes, Typography } from "@mui/material";
+import { Box, Button, styled, keyframes, Typography } from "@mui/material";
 
 const glowAnimation = keyframes\`
   from {
@@ -73,7 +93,7 @@ const glowAnimation = keyframes\`
   }
 \`;
 
-const StyledButton = styled(Button)(() => ({
+const StyledRedButton = styled(Button)(() => ({
   backgroundColor: "#450a0a",
   color: "#f87171",
   border: "1px solid #f87171",
@@ -117,12 +137,62 @@ const StyledButton = styled(Button)(() => ({
   },
 }));
 
+const StyledGreenButton = styled(Button)(() => ({
+  backgroundColor: "#052e16",
+  color: "#4ade80",
+  border: "1px solid #4ade80",
+  borderBottomWidth: "4px",
+  fontWeight: 500,
+  overflow: "hidden",
+  position: "relative",
+  padding: "6px 30px",
+  borderRadius: "6px",
+  outline: "none",
+  transition: "all 0.3s ease",
+  fontFamily: '"JetBrains Mono", monospace',
+  textTransform: "none",
+
+  "&:hover": {
+    filter: "brightness(1.5)",
+    borderTopWidth: "4px",
+    borderBottomWidth: "1px",
+  },
+
+  "&:active": {
+    opacity: 0.75,
+  },
+
+  "& .glow-effect": {
+    backgroundColor: "#4ade80",
+    boxShadow: "0 0 10px 10px rgba(74, 222, 128, 0.3)",
+    position: "absolute",
+    top: "-150%",
+    left: 0,
+    display: "inline-flex",
+    width: "320px",
+    height: "5px",
+    borderRadius: "6px",
+    opacity: 0.5,
+    transition: "all 0.5s ease",
+  },
+
+  "&:hover .glow-effect": {
+    animation: \`\${glowAnimation} 0.5s forwards\`,
+  },
+}));
+
 const ButtonDemo: FC = () => {
   return (
-    <StyledButton>
-      <span className="glow-effect"></span>
-      <Typography>Hover Me</Typography>
-    </StyledButton>
+    <Box sx={{ display: 'flex', gap: 2 }}>
+      <StyledRedButton>
+        <Typography className="glow-effect"></Typography>
+        <Typography>Red Button</Typography>
+      </StyledRedButton>
+      <StyledGreenButton>
+        <Typography className="glow-effect"></Typography>
+        <Typography>Green Button</Typography>
+      </StyledGreenButton>
+    </Box>
   );
 };
 
@@ -130,10 +200,16 @@ export default ButtonDemo;`;
 
   const ButtonDemo: FC = () => {
     return (
-      <StyledButton>
-        <span className="glow-effect"></span>
-        <Typography>Button</Typography>
-      </StyledButton>
+      <Box sx={{ display: "flex", gap: 1 }}>
+        <StyledRedButton>
+          <Typography className="glow-effect"></Typography>
+          <Typography>Red Button</Typography>
+        </StyledRedButton>
+        <StyledGreenButton>
+          <Typography className="glow-effect"></Typography>
+          <Typography>Green Button</Typography>
+        </StyledGreenButton>
+      </Box>
     );
   };
 
