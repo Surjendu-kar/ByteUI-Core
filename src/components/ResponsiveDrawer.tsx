@@ -40,7 +40,7 @@ export default function ResponsiveDrawer(props: Props) {
   };
 
   const drawer = (
-    <div>
+    <Box>
       <Toolbar />
       <Divider />
       <List>
@@ -53,7 +53,7 @@ export default function ResponsiveDrawer(props: Props) {
         ))}
       </List>
       <Divider />
-    </div>
+    </Box>
   );
 
   const container =
