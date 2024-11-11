@@ -1,10 +1,11 @@
+import { Box } from "@mui/material";
 import ResponsiveDrawer from "./components/ResponsiveDrawer";
 
 function App() {
   return (
-    <div>
+    <Box>
       <ResponsiveDrawer />
-    </div>
+    </Box>
   );
 }
 

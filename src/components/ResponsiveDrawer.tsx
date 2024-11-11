@@ -11,7 +11,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import { Typography } from "@mui/material";
+import Buttons from "./Buttons/Buttons";
 
 const drawerWidth = 200;
 
@@ -68,8 +68,8 @@ export default function ResponsiveDrawer(props: Props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          bgcolor: "background.paper", // Changes background to white/paper color
-          color: "text.primary", // Changes text color to primary text color
+          bgcolor: "background.paper",
+          color: "text.primary",
         }}
       >
         <Toolbar>
@@ -85,7 +85,7 @@ export default function ResponsiveDrawer(props: Props) {
         </Toolbar>
         <Divider />
 
-        <Typography>contents</Typography>
+        <Buttons />
       </AppBar>
       <Box
         component="nav"
