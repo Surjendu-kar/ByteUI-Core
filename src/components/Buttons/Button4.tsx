@@ -1,220 +1,390 @@
-import { Button, styled, keyframes, Typography } from "@mui/material";
+import { FC } from "react";
+import { Button, styled, Typography, Box } from "@mui/material";
+import LogoutIcon from "@mui/icons-material/Logout";
 import CodeViewer from "../CodeViewer/CodeViewer";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LoginIcon from "@mui/icons-material/Login";
 
-const moveUpAlternate = keyframes`
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(80%);
-  }
-  51% {
-    transform: translateY(-80%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-`;
+const LogoutButton = styled(Button)(() => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  width: "40px",
+  height: "40px",
+  border: "none",
+  borderRadius: "50%",
+  cursor: "pointer",
+  position: "relative",
+  overflow: "hidden",
+  transition: "all 0.3s",
+  boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.199)",
+  backgroundColor: "rgb(255, 65, 65)",
+  padding: 0,
+  minWidth: "unset",
+  fontSize: "12px",
 
-const StyledButton = styled(Button)(() => ({
-  "&.MuiButton-root": {
-    backgroundColor: "#000",
-    color: "#fff",
-    cursor: "pointer",
-    fontSize: "18px",
-    fontWeight: 900,
-    lineHeight: 1,
-    margin: 0,
-    height: "40px",
-    padding: "0 40px",
-    textTransform: "capitalize",
-    borderRadius: "20px",
-    borderWidth: "2px",
-    zIndex: 0,
-    overflow: "hidden",
-    position: "relative",
-    WebkitTapHighlightColor: "transparent",
-    WebkitAppearance: "button",
-    mixBlendMode: "normal",
+  "&:hover": {
+    width: "125px",
+    borderRadius: "40px",
+    backgroundColor: "rgb(255, 65, 65)",
+  },
 
-    "&:hover": {
-      backgroundColor: "#000",
+  "&:active": {
+    transform: "translate(2px, 2px)",
+  },
+
+  "& .icon-container": {
+    width: "100%",
+    transition: "all 0.3s",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+
+    "& svg": {
+      width: "23px",
+      height: "23px",
+      color: "white",
+      strokeWidth: 3,
     },
+  },
 
-    "& .text-container": {
-      display: "block",
-      position: "relative",
-      overflow: "hidden",
-      mixBlendMode: "difference",
-    },
+  "&:hover .icon-container": {
+    width: "30%",
+    paddingLeft: "20px",
+  },
 
-    "& .text": {
-      display: "block",
-      position: "relative",
-    },
+  "& .button-text": {
+    position: "absolute",
+    right: "0%",
+    width: "0%",
+    opacity: 0,
+    color: "white",
+    fontSize: "1.2em",
+    fontWeight: 600,
+    transition: "all 0.3s",
+    whiteSpace: "nowrap",
+  },
 
-    "&:hover .text": {
-      animation: `${moveUpAlternate} 0.3s forwards`,
-    },
-
-    "&::before, &::after": {
-      "--skew": "0.2",
-      background: "#fff",
-      content: '""',
-      display: "block",
-      height: "102%",
-      pointerEvents: "none",
-      position: "absolute",
-      transition: "transform 0.2s ease",
-      width: "100%",
-      transform:
-        "skew(calc(150deg * var(--skew))) translateY(var(--progress, 0))",
-    },
-
-    "&::before": {
-      left: "calc(-50% - 50% * var(--skew))",
-      top: "-104%",
-      "--progress": "0%",
-    },
-
-    "&::after": {
-      left: "calc(50% + 50% * var(--skew))",
-      top: "102%",
-      zIndex: -1,
-      "--progress": "0%",
-    },
-
-    "&:hover::before": {
-      "--progress": "100%",
-    },
-
-    "&:hover::after": {
-      "--progress": "-102%",
-    },
+  "&:hover .button-text": {
+    opacity: 1,
+    width: "70%",
+    paddingRight: "10px",
   },
 }));
 
-const ButtonDemo = () => {
+const FacebookButton = styled(LogoutButton)(() => ({
+  backgroundColor: "#0163E0",
+
+  "&:hover": {
+    width: "150px",
+    backgroundColor: "#0163E0",
+  },
+}));
+
+const LoginButton = styled(LogoutButton)(() => ({
+  backgroundColor: "white",
+
+  "&:hover": {
+    width: "125px",
+    backgroundColor: "black",
+  },
+
+  "& .icon-container": {
+    "& svg": {
+      color: "black",
+    },
+  },
+
+  "&:hover .icon-container svg": {
+    color: "white",
+  },
+}));
+
+const ButtonDemo: FC = () => {
   return (
-    <StyledButton disableRipple>
-      <Typography className="text-container">
-        <Typography className="text" component="span">
-          Button
-        </Typography>
-      </Typography>
-    </StyledButton>
+    <Box sx={{ display: "flex", gap: 2 }}>
+      <LogoutButton disableRipple>
+        <span className="icon-container">
+          <LogoutIcon />
+        </span>
+        <Typography className="button-text">Logout</Typography>
+      </LogoutButton>
+
+      <FacebookButton disableRipple>
+        <span className="icon-container">
+          <FacebookIcon />
+        </span>
+        <Typography className="button-text">Facebook</Typography>
+      </FacebookButton>
+
+      <LoginButton disableRipple>
+        <span className="icon-container">
+          <LoginIcon />
+        </span>
+        <Typography className="button-text">Login</Typography>
+      </LoginButton>
+    </Box>
   );
 };
 
-const Button4 = () => {
-  const shortCode = `<StyledButton disableRipple>
-  <Typography className="text-container">
-    <Typography className="text" component="span">Button</Typography>
-  </Typography>
-</StyledButton>`;
+const Button4: FC = () => {
+  const shortCode = `<LogoutButton disableRipple>
+  <span className="icon-container">
+    <LogoutIcon />
+  </span>
+  <Typography className="button-text">Logout</Typography>
+</LogoutButton
+<FacebookButton disableRipple>
+  <span className="icon-container">
+    <FacebookIcon />
+  </span>
+  <Typography className="button-text">Facebook</Typography>
+</FacebookButton
+<LoginButton disableRipple>
+  <span className="icon-container">
+    <LoginIcon />
+  </span>
+  <Typography className="button-text">Login</Typography>
+</LoginButton>`;
 
-  const fullCode = `import { Button, styled, keyframes, Typography } from "@mui/material";
+  const fullCode = `import { FC } from "react";
+import { Button, styled, Typography, Box } from "@mui/material";
+import LogoutIcon from "@mui/icons-material/Logout";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LoginIcon from "@mui/icons-material/Login";
 
-const moveUpAlternate = keyframes\`
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(80%);
-  }
-  51% {
-    transform: translateY(-80%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-\`;
+const LogoutButton = styled(Button)(() => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  width: "40px",
+  height: "40px",
+  border: "none",
+  borderRadius: "50%",
+  cursor: "pointer",
+  position: "relative",
+  overflow: "hidden",
+  transition: "all 0.3s",
+  boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.199)",
+  backgroundColor: "rgb(255, 65, 65)",
+  padding: 0,
+  minWidth: "unset",
+  fontSize: "12px",
 
-const StyledButton = styled(Button)(() => ({
-  "&.MuiButton-root": {
-    backgroundColor: "#000",
-    color: "#fff",
-    cursor: "pointer",
-    fontSize: "18px",
-    fontWeight: 900,
-    lineHeight: 1,
-    margin: 0,
-    height: "40px",
-    padding: "0 40px",
-    textTransform: "capitalize",
-    borderRadius: "20px",
-    borderWidth: "2px",
-    zIndex: 0,
-    overflow: "hidden",
-    position: "relative",
-    WebkitTapHighlightColor: "transparent",
-    WebkitAppearance: "button",
-    mixBlendMode: "normal",
+  "&:hover": {
+    width: "125px",
+    borderRadius: "40px",
+    backgroundColor: "rgb(255, 65, 65)",
+  },
 
-    "&:hover": {
-      backgroundColor: "#000",
+  "&:active": {
+    transform: "translate(2px, 2px)",
+  },
+
+  "& .icon-container": {
+    width: "100%",
+    transition: "all 0.3s",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+
+    "& svg": {
+      width: "23px",
+      height: "23px",
+      color: "white",
+      strokeWidth: 3,
     },
+  },
 
-    "& .text-container": {
-      display: "block",
-      position: "relative",
-      overflow: "hidden",
-      mixBlendMode: "difference",
-    },
+  "&:hover .icon-container": {
+    width: "30%",
+    paddingLeft: "20px",
+  },
 
-    "& .text": {
-      display: "block",
-      position: "relative",
-    },
+  "& .button-text": {
+    position: "absolute",
+    right: "0%",
+    width: "0%",
+    opacity: 0,
+    color: "white",
+    fontSize: "1.2em",
+    fontWeight: 600,
+    transition: "all 0.3s",
+    whiteSpace: "nowrap",
+  },
 
-    "&:hover .text": {
-      animation: \`\${moveUpAlternate} 0.3s forwards\`,
-    },
-
-    "&::before, &::after": {
-      "--skew": "0.2",
-      background: "#fff",
-      content: '""',
-      display: "block",
-      height: "102%",
-      pointerEvents: "none",
-      position: "absolute",
-      transition: "transform 0.2s ease",
-      width: "100%",
-      transform:
-        "skew(calc(150deg * var(--skew))) translateY(var(--progress, 0))",
-    },
-
-    "&::before": {
-      left: "calc(-50% - 50% * var(--skew))",
-      top: "-104%",
-      "--progress": "0%",
-    },
-
-    "&::after": {
-      left: "calc(50% + 50% * var(--skew))",
-      top: "102%",
-      zIndex: -1,
-      "--progress": "0%",
-    },
-
-    "&:hover::before": {
-      "--progress": "100%",
-    },
-
-    "&:hover::after": {
-      "--progress": "-102%",
-    },
+  "&:hover .button-text": {
+    opacity: 1,
+    width: "70%",
+    paddingRight: "10px",
   },
 }));
 
-const ButtonDemo = () => {
+const FacebookButton = styled(Button)(() => ({
+ display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  width: "40px",
+  height: "40px",
+  border: "none",
+  borderRadius: "50%",
+  cursor: "pointer",
+  position: "relative",
+  overflow: "hidden",
+  transition: "all 0.3s",
+  boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.199)",
+  backgroundColor: "#0163E0",
+  padding: 0,
+  minWidth: "unset",
+  fontSize: "12px",
+
+  "&:hover": {
+    borderRadius: "40px",
+    width: "150px",
+    backgroundColor: "#0163E0",
+  },
+
+  "&:active": {
+    transform: "translate(2px, 2px)",
+  },
+
+  "& .icon-container": {
+    width: "100%",
+    transition: "all 0.3s",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+
+    "& svg": {
+      width: "23px",
+      height: "23px",
+      color: "white",
+      strokeWidth: 3,
+    },
+  },
+
+  "&:hover .icon-container": {
+    width: "30%",
+    paddingLeft: "20px",
+  },
+
+  "& .button-text": {
+    position: "absolute",
+    right: "0%",
+    width: "0%",
+    opacity: 0,
+    color: "white",
+    fontSize: "1.2em",
+    fontWeight: 600,
+    transition: "all 0.3s",
+    whiteSpace: "nowrap",
+  },
+
+  "&:hover .button-text": {
+    opacity: 1,
+    width: "70%",
+    paddingRight: "10px",
+  },
+}));
+
+const LoginButton = styled(Button)(() => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  width: "40px",
+  height: "40px",
+  border: "none",
+  borderRadius: "50%",
+  cursor: "pointer",
+  position: "relative",
+  overflow: "hidden",
+  transition: "all 0.3s",
+  boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.199)",
+  backgroundColor: "white",
+  padding: 0,
+  minWidth: "unset",
+  fontSize: "12px",
+
+  "&:hover": {
+    width: "125px",
+    borderRadius: "40px",
+    backgroundColor: "black",
+  },
+
+  "&:active": {
+    transform: "translate(2px, 2px)",
+  },
+
+  "& .icon-container": {
+    width: "100%",
+    transition: "all 0.3s",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+
+    "& svg": {
+      width: "23px",
+      height: "23px",
+      color: "black",
+      strokeWidth: 3,
+      transition: "color 0.3s",
+    },
+  },
+
+  "&:hover .icon-container svg": {
+    color: "white",
+  },
+
+  "&:hover .icon-container": {
+    width: "30%",
+    paddingLeft: "20px",
+  },
+
+  "& .button-text": {
+    position: "absolute",
+    right: "0%",
+    width: "0%",
+    opacity: 0,
+    color: "white",
+    fontSize: "1.2em",
+    fontWeight: 600,
+    transition: "all 0.3s",
+    whiteSpace: "nowrap",
+  },
+
+  "&:hover .button-text": {
+    opacity: 1,
+    width: "70%",
+    paddingRight: "10px",
+  },
+}));
+
+
+
+const ButtonDemo: FC = () => {
   return (
-    <StyledButton disableRipple>
-      <Typography className="text-container">
-        <Typography className="text" component="span">Button</Typography>
-      </Typography>
-    </StyledButton>
+    <Box sx={{ display: "flex", gap: 2 }}>
+      <LogoutButton disableRipple>
+        <span className="icon-container">
+          <LogoutIcon />
+        </span>
+        <Typography className="button-text">Logout</Typography>
+      </LogoutButton>
+
+      <FacebookButton disableRipple>
+        <span className="icon-container">
+          <FacebookIcon />
+        </span>
+        <Typography className="button-text">Facebook</Typography>
+      </FacebookButton>
+
+      <LoginButton disableRipple>
+        <span className="icon-container">
+          <LoginIcon />
+        </span>
+        <Typography className="button-text">Login</Typography>
+      </LoginButton>
+    </Box>
   );
 };
 

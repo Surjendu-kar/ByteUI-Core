@@ -142,6 +142,53 @@ const GradientContainer = styled(Box)(() => ({
   },
 }));
 
+const GoldButton = styled(Button)(() => ({
+  width: "140px",
+  height: "40px",
+  border: "none",
+  borderRadius: "10px",
+  background:
+    "linear-gradient(to right, #77530a, #ffd277, #77530a, #77530a, #ffd277, #77530a)",
+  backgroundSize: "250%",
+  backgroundPosition: "left",
+  color: "#ffd277",
+  position: "relative",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  cursor: "pointer",
+  transition: "all 1s",
+  overflow: "hidden",
+  padding: 0,
+  minWidth: "140px",
+  textTransform: "none",
+
+  "& .buttonContent": {
+    position: "absolute",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "97%",
+    height: "90%",
+    borderRadius: "8px",
+    transition: "all 1s",
+    backgroundColor: "rgba(0, 0, 0, 0.842)",
+    backgroundSize: "200%",
+    zIndex: 1,
+  },
+
+  "&:hover": {
+    backgroundPosition: "right",
+    "& .buttonContent": {
+      backgroundPosition: "right",
+    },
+  },
+
+  "&:active": {
+    transform: "scale(0.95)",
+  },
+}));
+
 const ButtonDemo: FC = () => {
   return (
     <Box
@@ -156,6 +203,9 @@ const ButtonDemo: FC = () => {
       <GradientContainer>
         <Button>Hover me</Button>
       </GradientContainer>
+      <GoldButton>
+        <Typography className="buttonContent">Click Me</Typography>
+      </GoldButton>
     </Box>
   );
 };
@@ -166,7 +216,10 @@ const Button6: FC = () => {
 </StyledButton>
 <GradientContainer>
   <Button>Hover me</Button>
-</GradientContainer>`;
+</GradientContainer>
+<GoldButton>
+  <Typography className="buttonContent">Click Me</Typography>
+</GoldButton>`;
 
   const fullCode = `import { FC } from "react";
 import { Button, styled, keyframes, Typography, Box } from "@mui/material";
@@ -238,7 +291,7 @@ const StyledButton = styled(Button)(() => ({
     filter: "blur(5px)",
     width: "calc(100% + 4px)",
     height: "calc(100% + 4px)",
-    animation: \`\${gradientAnimation} 20s linear infinite, ${glowingEffect} 2s ease-in-out infinite\`,
+    animation: \`\${gradientAnimation} 20s linear infinite, \${glowingEffect} 2s ease-in-out infinite\`,
     transition: "opacity 0.3s ease-in-out",
     borderRadius: "10px",
     opacity: 0.8,
@@ -311,9 +364,56 @@ const GradientContainer = styled(Box)(() => ({
   },
 }));
 
+const GoldButton = styled(Button)(() => ({
+  width: "140px",
+  height: "40px",
+  border: "none",
+  borderRadius: "10px",
+  background:
+    "linear-gradient(to right, #77530a, #ffd277, #77530a, #77530a, #ffd277, #77530a)",
+  backgroundSize: "250%",
+  backgroundPosition: "left",
+  color: "#ffd277",
+  position: "relative",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  cursor: "pointer",
+  transition: "all 1s",
+  overflow: "hidden",
+  padding: 0,
+  minWidth: "140px",
+  textTransform: "none",
+
+  "& .buttonContent": {
+    position: "absolute",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "97%",
+    height: "90%",
+    borderRadius: "8px",
+    transition: "all 1s",
+    backgroundColor: "rgba(0, 0, 0, 0.842)",
+    backgroundSize: "200%",
+    zIndex: 1,
+  },
+
+  "&:hover": {
+    backgroundPosition: "right",
+    "& .buttonContent": {
+      backgroundPosition: "right",
+    },
+  },
+
+  "&:active": {
+    transform: "scale(0.95)",
+  },
+}));
+
 const ButtonDemo: FC = () => {
   return (
-   <Box
+  <Box
       sx={{
         display: "flex",
         gap: 2,
@@ -322,9 +422,14 @@ const ButtonDemo: FC = () => {
       <StyledButton>
         <Typography className="text">Button</Typography>
       </StyledButton>
+
       <GradientContainer>
         <Button>Hover me</Button>
       </GradientContainer>
+      
+      <GoldButton>
+        <Typography className="buttonContent">Click Me</Typography>
+      </GoldButton>
     </Box>
   );
 };
