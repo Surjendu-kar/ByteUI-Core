@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button, styled, keyframes, Typography } from "@mui/material";
+import { Button, styled, keyframes, Typography, Box } from "@mui/material";
 import CodeViewer from "../CodeViewer/CodeViewer";
 
 const gradientAnimation = keyframes`
@@ -24,8 +24,9 @@ const glowingEffect = keyframes`
 `;
 
 const StyledButton = styled(Button)(() => ({
+  minWidth: "100px",
   height: "40px",
-  padding: "0 30px",
+  padding: "0 20px",
   backgroundColor: "#111",
   border: "none",
   outline: "none",
@@ -39,7 +40,7 @@ const StyledButton = styled(Button)(() => ({
   alignItems: "center",
   justifyContent: "center",
   fontFamily: '"JetBrains Mono", monospace',
-  fontSize: "18px",
+  fontSize: "16px",
   fontWeight: 500,
   letterSpacing: 0,
   margin: 0,
@@ -96,13 +97,79 @@ const StyledButton = styled(Button)(() => ({
   },
 }));
 
+const GradientContainer = styled(Box)(() => ({
+  position: "relative",
+  padding: "2px",
+  background: "linear-gradient(90deg, #03a9f4, #f441a5)",
+  borderRadius: "0.5em",
+  transition: "all 0.4s ease",
+  zIndex: 0,
+
+  "& button": {
+    fontSize: "0.9em",
+    padding: "0.3em 1em",
+    borderRadius: "0.5em",
+    border: "none",
+    backgroundColor: "#000",
+    color: "#fff",
+    cursor: "pointer",
+    boxShadow: "2px 2px 3px #000000b4",
+    textTransform: "none",
+    "&:hover": {
+      backgroundColor: "#000",
+    },
+  },
+
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    inset: "-5px",
+    margin: "auto",
+    borderRadius: "0.9em",
+    zIndex: -1,
+    background: "linear-gradient(90deg, #03a9f4, #f441a5)",
+    opacity: 0,
+    filter: "blur(1.2em)",
+    transition: "opacity 0.4s ease",
+  },
+
+  "&:hover::after": {
+    opacity: 1,
+  },
+
+  "&:active::after": {
+    filter: "blur(0.2em)",
+  },
+}));
+
+const ButtonDemo: FC = () => {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        gap: 2,
+      }}
+    >
+      <StyledButton>
+        <Typography className="text">Button</Typography>
+      </StyledButton>
+      <GradientContainer>
+        <Button>Hover me</Button>
+      </GradientContainer>
+    </Box>
+  );
+};
+
 const Button6: FC = () => {
   const shortCode = `<StyledButton>
   <Typography className="text">Button</Typography>
-</StyledButton>`;
+</StyledButton>
+<GradientContainer>
+  <Button>Hover me</Button>
+</GradientContainer>`;
 
   const fullCode = `import { FC } from "react";
-import { Button, styled, keyframes, Typography } from "@mui/material";
+import { Button, styled, keyframes, Typography, Box } from "@mui/material";
 
 const gradientAnimation = keyframes\`
   0% {
@@ -126,8 +193,9 @@ const glowingEffect = keyframes\`
 \`;
 
 const StyledButton = styled(Button)(() => ({
+  minWidth: "100px",
   height: "40px",
-  padding: "0 30px",
+  padding: "0 20px",
   backgroundColor: "#111",
   border: "none",
   outline: "none",
@@ -141,7 +209,7 @@ const StyledButton = styled(Button)(() => ({
   alignItems: "center",
   justifyContent: "center",
   fontFamily: '"JetBrains Mono", monospace',
-  fontSize: "18px",
+  fontSize: "16px",
   fontWeight: 500,
   letterSpacing: 0,
   margin: 0,
@@ -170,7 +238,7 @@ const StyledButton = styled(Button)(() => ({
     filter: "blur(5px)",
     width: "calc(100% + 4px)",
     height: "calc(100% + 4px)",
-    animation: \`\${gradientAnimation} 20s linear infinite, \${glowingEffect} 2s ease-in-out infinite\`,
+    animation: \`\${gradientAnimation} 20s linear infinite, ${glowingEffect} 2s ease-in-out infinite\`,
     transition: "opacity 0.3s ease-in-out",
     borderRadius: "10px",
     opacity: 0.8,
@@ -198,23 +266,70 @@ const StyledButton = styled(Button)(() => ({
   },
 }));
 
+const GradientContainer = styled(Box)(() => ({
+  position: "relative",
+  padding: "2px",
+  background: "linear-gradient(90deg, #03a9f4, #f441a5)",
+  borderRadius: "0.5em",
+  transition: "all 0.4s ease",
+  zIndex: 0,
+
+  "& button": {
+    fontSize: "0.9em",
+    padding: "0.3em 1em",
+    borderRadius: "0.5em",
+    border: "none",
+    backgroundColor: "#000",
+    color: "#fff",
+    cursor: "pointer",
+    boxShadow: "2px 2px 3px #000000b4",
+    textTransform: "none",
+    "&:hover": {
+      backgroundColor: "#000",
+    },
+  },
+
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    inset: "-5px",
+    margin: "auto",
+    borderRadius: "0.9em",
+    zIndex: -1,
+    background: "linear-gradient(90deg, #03a9f4, #f441a5)",
+    opacity: 0,
+    filter: "blur(1.2em)",
+    transition: "opacity 0.4s ease",
+  },
+
+  "&:hover::after": {
+    opacity: 1,
+  },
+
+  "&:active::after": {
+    filter: "blur(0.2em)",
+  },
+}));
+
 const ButtonDemo: FC = () => {
   return (
-    <StyledButton>
-      <Typography className="text">Button</Typography>
-    </StyledButton>
+   <Box
+      sx={{
+        display: "flex",
+        gap: 2,
+      }}
+    >
+      <StyledButton>
+        <Typography className="text">Button</Typography>
+      </StyledButton>
+      <GradientContainer>
+        <Button>Hover me</Button>
+      </GradientContainer>
+    </Box>
   );
 };
 
 export default ButtonDemo;`;
-
-  const ButtonDemo: FC = () => {
-    return (
-      <StyledButton>
-        <Typography className="text">Button</Typography>
-      </StyledButton>
-    );
-  };
 
   return (
     <CodeViewer shortCode={shortCode} fullCode={fullCode} demo={ButtonDemo} />
