@@ -15,6 +15,7 @@ const Title = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   color: "#fff",
   marginBottom: theme.spacing(2),
+  textAlign: "left",
 }));
 
 const Description = styled(Typography)(({ theme }) => ({
@@ -25,55 +26,78 @@ const Description = styled(Typography)(({ theme }) => ({
 
 function Buttons() {
   return (
-    <Stack sx={{ width: "100%", gap: 4, pb: "5rem", alignItems: "center" }}>
-      <Box>
-        <Title>Buttons</Title>
-        <Description>
-          Buttons allow users to take actions, and make choices, with a single
-          tap.
-        </Description>
-        <Description>
-          Buttons communicate actions that users can take. They are typically
-          placed throughout your UI, in places like:
-        </Description>
-        <ul style={{ color: "rgba(255, 255, 255, 0.8)", marginLeft: "20px" }}>
-          <li>Modal windows</li>
-          <li>Forms</li>
-          <li>Cards</li>
-          <li>Toolbars</li>
-        </ul>
-      </Box>
+    <Stack sx={{ width: "100%", pb: "5rem", alignItems: "center" }}>
+      <Stack sx={{ gap: 5, width: "100%" }}>
+        <Box
+          sx={{
+            width: "70%",
+            margin: "0 auto",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+          }}
+        >
+          <Box sx={{ width: "100%" }}>
+            <Title>Button</Title>
+            <Description>
+              Buttons allow users to take actions, and make choices, with a
+              single tap.
+            </Description>
+            <Description>
+              This showcase demonstrates various Material-UI button styles and
+              implementations. Each example includes ready-to-use code that you
+              can copy and integrate into your project. Browse through different
+              buttons.
+            </Description>
 
-      <Box sx={{ width: "100%" }}>
-        <Button1 />
-      </Box>
-      <Box sx={{ width: "100%" }}>
-        <Button2 />
-      </Box>
-      <Box sx={{ width: "100%" }}>
-        <Button3 />
-      </Box>
-      <Box sx={{ width: "100%" }}>
-        <Button4 />
-      </Box>
-      <Box sx={{ width: "100%" }}>
-        <Button5 />
-      </Box>
-      <Box sx={{ width: "100%" }}>
-        <Button6 />
-      </Box>
-      <Box sx={{ width: "100%" }}>
-        <Button7 />
-      </Box>
-      <Box sx={{ width: "100%" }}>
-        <Button8 />
-      </Box>
-      <Box sx={{ width: "100%" }}>
-        <Button9 />
-      </Box>
-      <Box sx={{ width: "100%" }}>
-        <Button10 />
-      </Box>
+            <Description sx={{ mt: 2 }}>
+              Each button example below comes with:
+            </Description>
+            <ul
+              style={{
+                color: "rgba(255, 255, 255, 0.8)",
+                marginLeft: "20px",
+              }}
+            >
+              <li>Live demonstration of the button style</li>
+              <li>Copyable code snippets for quick implementation</li>
+              <li>Comprehensive implementation examples using Material-UI</li>
+              <li>Customization options and variants</li>
+            </ul>
+          </Box>
+        </Box>
+
+        <Box sx={{ width: "100%" }}>
+          <Button1 />
+        </Box>
+        <Box sx={{ width: "100%" }}>
+          <Button2 />
+        </Box>
+        <Box sx={{ width: "100%" }}>
+          <Button3 />
+        </Box>
+        <Box sx={{ width: "100%" }}>
+          <Button4 />
+        </Box>
+        <Box sx={{ width: "100%" }}>
+          <Button5 />
+        </Box>
+        <Box sx={{ width: "100%" }}>
+          <Button6 />
+        </Box>
+        <Box sx={{ width: "100%" }}>
+          <Button7 />
+        </Box>
+        <Box sx={{ width: "100%" }}>
+          <Button8 />
+        </Box>
+        <Box sx={{ width: "100%" }}>
+          <Button9 />
+        </Box>
+        <Box sx={{ width: "100%" }}>
+          <Button10 />
+        </Box>
+      </Stack>
     </Stack>
   );
 }
