@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { Button, styled, Box, Typography } from "@mui/material";
 import CodeViewer from "../CodeViewer/CodeViewer";
 
@@ -65,7 +64,7 @@ const PlayButton = styled(Button)(() => ({
   },
 }));
 
-const ButtonDemo: FC = () => {
+const ButtonDemo = () => {
   return (
     <Box
       sx={{
@@ -120,7 +119,7 @@ const ButtonDemo: FC = () => {
   );
 };
 
-const Button8: FC = () => {
+const Button8 = () => {
   const shortCode = `<PlayButton>
   <svg
     xmlns="http://www.w3.org/2000/svg"
