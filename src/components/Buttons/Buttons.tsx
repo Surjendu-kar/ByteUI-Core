@@ -8,6 +8,7 @@ import Button6 from "./Button6";
 import Button7 from "./Button7";
 import Button8 from "./Button8";
 import Button9 from "./Button9";
+import Button10 from "./Button10";
 
 function Buttons() {
   return (
@@ -38,6 +39,9 @@ function Buttons() {
       </Box>
       <Box sx={{ width: "100%" }}>
         <Button9 />
+      </Box>
+      <Box sx={{ width: "100%" }}>
+        <Button10 />
       </Box>
     </Stack>
   );
