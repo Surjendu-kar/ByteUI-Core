@@ -54,7 +54,7 @@ const CodeViewer: FC<CodeViewerProps> = ({
             border: "1px solid rgba(255, 255, 255, 0.1)",
             display: "flex",
             justifyContent: "center",
-            bgcolor: "#19191b",
+            bgcolor: "#1f1f21",
             borderTopLeftRadius: 5,
             borderTopRightRadius: 5,
           }}
@@ -64,7 +64,7 @@ const CodeViewer: FC<CodeViewerProps> = ({
       )}
 
       {/* Code Section */}
-      <Box sx={{ bgcolor: "#11111b", borderRadius: 2 }}>
+      <Box sx={{ bgcolor: "#101011", borderRadius: 2 }}>
         {/* Header */}
         <Box
           sx={{
