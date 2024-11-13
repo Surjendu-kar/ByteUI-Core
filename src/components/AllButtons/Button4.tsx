@@ -22,6 +22,7 @@ const LogoutButton = styled(Button)(() => ({
   padding: 0,
   minWidth: "unset",
   fontSize: "12px",
+  textTransform: "capitalize",
 
   "&:hover": {
     width: "125px",
@@ -100,6 +101,62 @@ const LoginButton = styled(LogoutButton)(() => ({
   },
 }));
 
+const BackToTopButton = styled(Button)(() => ({
+  width: "42px",
+  height: "42px",
+  borderRadius: "50%",
+  backgroundColor: "rgb(20, 20, 20)",
+  border: "none",
+  fontWeight: 600,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  cursor: "pointer",
+  transition: "all 0.3s",
+  overflow: "hidden",
+  position: "relative",
+  padding: 0,
+  minWidth: "unset",
+  textTransform: "capitalize",
+
+  "&:hover": {
+    width: "150px",
+    borderRadius: "40px",
+    backgroundColor: "rgb(181, 160, 255)",
+    alignItems: "center",
+  },
+
+  "&:active": {
+    transform: "translate(2px, 2px)",
+  },
+
+  "& svg": {
+    width: "15px",
+    height: "15px",
+    transition: "all 0.3s",
+    fill: "white",
+  },
+
+  "&:hover svg": {
+    transform: "translateY(-200%)",
+  },
+
+  "&::before": {
+    position: "absolute",
+    bottom: "-20px",
+    content: '"Back to Top"',
+    color: "white",
+    fontSize: 0,
+  },
+
+  "&:hover::before": {
+    fontSize: "1.2em",
+    opacity: 1,
+    bottom: "unset",
+    transition: "all 0.3s",
+  },
+}));
+
 const ButtonDemo: FC = () => {
   return (
     <Box sx={{ display: "flex", gap: 2 }}>
@@ -123,6 +180,15 @@ const ButtonDemo: FC = () => {
         </span>
         <Typography className="button-text">Login</Typography>
       </LoginButton>
+
+      <BackToTopButton
+        disableRipple
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        <svg viewBox="0 0 384 512">
+          <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
+        </svg>
+      </BackToTopButton>
     </Box>
   );
 };
@@ -133,19 +199,30 @@ const Button4: FC = () => {
     <LogoutIcon />
   </span>
   <Typography className="button-text">Logout</Typography>
-</LogoutButton
+</LogoutButton>
+
 <FacebookButton disableRipple>
   <span className="icon-container">
     <FacebookIcon />
   </span>
   <Typography className="button-text">Facebook</Typography>
-</FacebookButton
+</FacebookButton>
+
 <LoginButton disableRipple>
   <span className="icon-container">
     <LoginIcon />
   </span>
   <Typography className="button-text">Login</Typography>
-</LoginButton>`;
+</LoginButton>
+
+<BackToTopButton
+  disableRipple
+  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+>
+  <svg viewBox="0 0 384 512">
+    <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
+  </svg>
+</BackToTopButton>`;
 
   const fullCode = `import { FC } from "react";
 import { Button, styled, Typography, Box } from "@mui/material";
@@ -359,6 +436,61 @@ const LoginButton = styled(Button)(() => ({
   },
 }));
 
+const BackToTopButton = styled(Button)(() => ({
+  width: "42px",
+  height: "42px",
+  borderRadius: "50%",
+  backgroundColor: "rgb(20, 20, 20)",
+  border: "none",
+  fontWeight: 600,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  cursor: "pointer",
+  transition: "all 0.3s",
+  overflow: "hidden",
+  position: "relative",
+  padding: 0,
+  minWidth: "unset",
+  textTransform: "capitalize",
+
+  "&:hover": {
+    width: "150px",
+    borderRadius: "40px",
+    backgroundColor: "rgb(181, 160, 255)",
+    alignItems: "center",
+  },
+
+  "&:active": {
+    transform: "translate(2px, 2px)",
+  },
+
+  "& svg": {
+    width: "15px",
+    height: "15px",
+    transition: "all 0.3s",
+    fill: "white",
+  },
+
+  "&:hover svg": {
+    transform: "translateY(-200%)",
+  },
+
+  "&::before": {
+    position: "absolute",
+    bottom: "-20px",
+    content: '"Back to Top"',
+    color: "white",
+    fontSize: 0,
+  },
+
+  "&:hover::before": {
+    fontSize: "1.2em",
+    opacity: 1,
+    bottom: "unset",
+    transition: "all 0.3s",
+  },
+}));
 
 
 const ButtonDemo: FC = () => {
@@ -384,6 +516,15 @@ const ButtonDemo: FC = () => {
         </span>
         <Typography className="button-text">Login</Typography>
       </LoginButton>
+
+      <BackToTopButton
+        disableRipple
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        <svg viewBox="0 0 384 512">
+          <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
+        </svg>
+      </BackToTopButton>
     </Box>
   );
 };
