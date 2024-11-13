@@ -9,6 +9,7 @@ import Button7 from "./Button7";
 import Button8 from "./Button8";
 import Button9 from "./Button9";
 import Button10 from "./Button10";
+import Button11 from "./Button11";
 
 const Title = styled(Typography)(({ theme }) => ({
   fontSize: "48px",
@@ -26,7 +27,7 @@ const Description = styled(Typography)(({ theme }) => ({
 
 function Buttons() {
   return (
-    <Stack sx={{ width: "100%", pb: "5rem", alignItems: "center" }}>
+    <Stack sx={{ width: "100%", alignItems: "center" }}>
       <Stack sx={{ gap: 5, width: "100%" }}>
         <Box
           sx={{
@@ -96,6 +97,9 @@ function Buttons() {
         </Box>
         <Box sx={{ width: "100%" }}>
           <Button10 />
+        </Box>
+        <Box sx={{ width: "100%" }}>
+          <Button11 />
         </Box>
       </Stack>
     </Stack>
