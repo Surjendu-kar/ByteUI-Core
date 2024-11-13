@@ -11,6 +11,7 @@ import Button9 from "./Button9";
 import Button10 from "./Button10";
 import Button11 from "./Button11";
 import Button12 from "./Button12";
+import Button13 from "./Button13";
 
 const MainTitle = styled(Typography)(({ theme }) => ({
   fontSize: "2.5rem",
@@ -120,6 +121,7 @@ function Buttons() {
 
           <Stack sx={{ gap: 4 }}>
             <Button10 />
+            <Button13 />
           </Stack>
         </Stack>
 
