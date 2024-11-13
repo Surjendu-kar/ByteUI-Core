@@ -42,8 +42,9 @@ const CodeViewer: FC<CodeViewerProps> = ({
   return (
     <Paper
       sx={{
-        maxWidth: 900,
+        maxWidth: 950,
         mx: "auto",
+        width: "100%",
       }}
     >
       {/* Demo Section */}

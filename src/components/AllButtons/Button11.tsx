@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Box, Button, Tooltip } from "@mui/material";
+import { Box, Button, Tooltip, Typography } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import CodeViewer from "../CodeViewer/CodeViewer";
 
@@ -159,12 +159,12 @@ const ButtonDemo = () => {
         }}
       >
         <StyledButton>
-          <div className="button-content">
-            <div className="text">Download</div>
-            <div className="icon">
+          <Box className="button-content">
+            <Typography className="text">Download</Typography>
+            <Typography className="icon">
               <DownloadIcon />
-            </div>
-          </div>
+            </Typography>
+          </Box>
         </StyledButton>
       </Tooltip>
 
@@ -174,47 +174,40 @@ const ButtonDemo = () => {
 };
 
 const Button11 = () => {
-  const shortCode = `<Box style={{ display: "flex", alignItems: "center" }}>
-  <Tooltip
-    title="Size: 20Mb"
-    placement="top"
-    arrow
-    componentsProps={{
-      tooltip: {
-        sx: {
-          bgcolor: "white",
-          color: "#111",
-          "& .MuiTooltip-arrow": {
-            color: "white",
-          },
-          fontSize: "0.9rem",
-          padding: "8px 12px",
-          borderRadius: "0.25em",
+  const shortCode = `<Tooltip>
+  title="Size: 20Mb"
+  placement="top"
+  arrow
+  componentsProps={{
+    tooltip: {
+      sx: {
+        bgcolor: "white",
+        color: "#111",
+        "& .MuiTooltip-arrow": {
+          color: "white",
         },
+        fontSize: "0.9rem",
+        padding: "8px 12px",
+        borderRadius: "0.25em",
       },
-    }}
-  >
-    <StyledButton>
-      <div className="button-content">
-        <div className="text">Download</div>
-        <div className="icon">
-          <DownloadIcon />
-        </div>
-      </div>
-    </StyledButton>
-  </Tooltip>
+    },
+  }}
+>
+  <StyledButton>
+    <Box className="button-content">
+      <Typography className="text">Download</Typography>
+      <Typography className="icon">
+        <DownloadIcon />
+      </Typography>
+    </Box>
+  </StyledButton>
+</Tooltip>
 
-  <AnimatedButton variant="contained">Download</AnimatedButton>
-</Box>
-  
-  <AnimatedButton variant="contained">
-    Download
-  </AnimatedButton>
-</div>`;
+<AnimatedButton variant="contained">Download</AnimatedButton>`;
 
   const fullCode = `import React from 'react';
 import { styled } from '@mui/material/styles';
-import { Button, Tooltip, Box } from '@mui/material';
+import { Button, Tooltip, Box, Typography } from '@mui/material';
 import DownloadIcon from "@mui/icons-material/Download";
 
 const StyledButton = styled(Button)(() => ({
@@ -352,7 +345,7 @@ const AnimatedButton = styled(Button)(() => ({
 
 const ButtonDemo = () => {
   return (
-    <Box style={{ display: "flex", alignItems: "center" }}>
+     <Box style={{ display: "flex", alignItems: "center" }}>
       <Tooltip
         title="Size: 20Mb"
         placement="top"
@@ -373,12 +366,12 @@ const ButtonDemo = () => {
         }}
       >
         <StyledButton>
-          <div className="button-content">
-            <div className="text">Download</div>
-            <div className="icon">
+          <Box className="button-content">
+            <Typography className="text">Download</Typography>
+            <Typography className="icon">
               <DownloadIcon />
-            </div>
-          </div>
+            </Typography>
+          </Box>
         </StyledButton>
       </Tooltip>
 

@@ -12,7 +12,7 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Buttons from "./Buttons/Buttons";
+import Buttons from "../AllButtons/Buttons";
 
 const drawerWidth = 200;
 
@@ -158,7 +158,6 @@ export default function ResponsiveDrawer(props: Props) {
           component="main"
           sx={{
             flexGrow: 1,
-            p: 3,
             width: { sm: `calc(100% - ${drawerWidth}px)` },
             mt: "5rem",
             bgcolor: "background.default",
