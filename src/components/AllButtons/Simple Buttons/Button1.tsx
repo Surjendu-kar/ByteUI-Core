@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 import { Button, Typography } from "@mui/material";
-import CodeViewer from "../CodeViewer/CodeViewer";
+import CodeViewer from "../../CodeViewer/CodeViewer";
 
 const LeftArrowButton = styled(Button)(() => ({
   background: "red",

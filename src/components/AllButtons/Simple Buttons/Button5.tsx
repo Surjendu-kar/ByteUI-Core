@@ -1,6 +1,6 @@
 import { Box, Button, keyframes, styled, Typography } from "@mui/material";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
-import CodeViewer from "../CodeViewer/CodeViewer";
+import CodeViewer from "../../CodeViewer/CodeViewer";
 
 const moveUpAlternate = keyframes`
   0% {
@@ -16,6 +16,120 @@ const moveUpAlternate = keyframes`
     transform: translateY(0);
   }
 `;
+
+const LetterAnimatedButton = styled(Button)(() => ({
+  WebkitTapHighlightColor: "transparent",
+  WebkitAppearance: "button",
+  backgroundColor: "#000",
+  color: "#fff",
+  cursor: "pointer",
+  fontFamily:
+    "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto",
+  fontSize: "15px",
+  lineHeight: 1.5,
+  margin: 0,
+  border: "1px solid",
+  boxSizing: "border-box",
+  display: "block",
+  overflow: "hidden",
+  padding: "0 20px",
+  position: "relative",
+  textTransform: "uppercase",
+  height: "38px",
+
+  "& .original": {
+    background: "#fff",
+    color: "#000",
+    display: "grid",
+    inset: 0,
+    placeContent: "center",
+    position: "absolute",
+    transition: "transform 0.2s cubic-bezier(0.87, 0, 0.13, 1)",
+  },
+
+  "&:hover .original": {
+    transform: "translateY(100%)",
+  },
+
+  "& .letters": {
+    display: "inline-flex",
+  },
+
+  "& span": {
+    opacity: 0,
+    transform: "translateY(-15px)",
+    transition: "transform 0.2s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.2s",
+  },
+
+  "& span:nth-of-type(2n)": {
+    transform: "translateY(15px)",
+  },
+
+  "&:hover span": {
+    opacity: 1,
+    transform: "translateY(0)",
+  },
+
+  "&:hover span:nth-of-type(2)": {
+    transitionDelay: "0.1s",
+  },
+
+  "&:hover span:nth-of-type(3)": {
+    transitionDelay: "0.2s",
+  },
+
+  "&:hover span:nth-of-type(4)": {
+    transitionDelay: "0.3s",
+  },
+
+  "&:hover span:nth-of-type(5)": {
+    transitionDelay: "0.4s",
+  },
+
+  "&:hover span:nth-of-type(6)": {
+    transitionDelay: "0.5s",
+  },
+}));
+
+const CircleSlideButton = styled(Button)(() => ({
+  fontFamily: "inherit",
+  display: "inline-block",
+  width: "6em",
+  lineHeight: "2.5em",
+  overflow: "hidden",
+  fontSize: "15px",
+  zIndex: 1,
+  color: "#ffffff",
+  border: "2px solid black",
+  borderRadius: "6px",
+  position: "relative",
+  backgroundColor: "transparent",
+  padding: 0,
+  textTransform: "none",
+
+  "&::before": {
+    position: "absolute",
+    content: '""',
+    backgroundColor: "white",
+    width: "150px",
+    height: "200px",
+    zIndex: -1,
+    borderRadius: "50%",
+    top: "100%",
+    left: "100%",
+    transition: "all 0.3s",
+  },
+
+  "&:hover": {
+    color: "black",
+    backgroundColor: "transparent",
+
+    "&::before": {
+      top: "-30px",
+      left: "-30px",
+    },
+  },
+}));
 
 const AnimatedButton = styled(Button)(() => ({
   "&.MuiButton-root": {
@@ -223,6 +337,20 @@ const PayButton = styled(Button)(() => ({
 const ButtonDemo = () => {
   return (
     <Box sx={{ display: "flex", gap: 2 }}>
+      <CircleSlideButton disableRipple>Slide</CircleSlideButton>
+
+      <LetterAnimatedButton>
+        <Box className="original">Button</Box>
+        <Box className="letters">
+          <Typography>B</Typography>
+          <Typography>U</Typography>
+          <Typography>T</Typography>
+          <Typography>T</Typography>
+          <Typography>O</Typography>
+          <Typography>N</Typography>
+        </Box>
+      </LetterAnimatedButton>
+
       <AnimatedButton disableRipple>
         <Typography className="text-container">
           <Typography className="text" component="span">
@@ -243,7 +371,21 @@ const ButtonDemo = () => {
 };
 
 const Button5 = () => {
-  const shortCode = `<AnimatedButton disableRipple>
+  const shortCode = `<CircleSlideButton disableRipple>Slide</CircleSlideButton>
+
+<LetterAnimatedButton>
+  <Box className="original">Button</Box>
+  <Box className="letters">
+    <Typography>B</Typography>
+    <Typography>U</Typography>
+    <Typography>T</Typography>
+    <Typography>T</Typography>
+    <Typography>O</Typography>
+    <Typography>N</Typography>
+  </Box>
+</LetterAnimatedButton> 
+
+<AnimatedButton disableRipple>
   <Typography className="text-container">
     <Typography className="text" component="span">
       Button
@@ -278,6 +420,120 @@ const moveUpAlternate = keyframes\`
     transform: translateY(0);
   }
 \`;
+
+const CircleSlideButton = styled(Button)(() => ({
+  fontFamily: "inherit",
+  display: "inline-block",
+  width: "6em",
+  lineHeight: "2.5em",
+  overflow: "hidden",
+  fontSize: "15px",
+  zIndex: 1,
+  color: "#ffffff",
+  border: "2px solid black",
+  borderRadius: "6px",
+  position: "relative",
+  backgroundColor: "transparent",
+  padding: 0,
+  textTransform: "none",
+
+  "&::before": {
+    position: "absolute",
+    content: '""',
+    backgroundColor: "white",
+    width: "150px",
+    height: "200px",
+    zIndex: -1,
+    borderRadius: "50%",
+    top: "100%",
+    left: "100%",
+    transition: "all 0.3s",
+  },
+
+  "&:hover": {
+    color: "black",
+    backgroundColor: "transparent",
+
+    "&::before": {
+      top: "-30px",
+      left: "-30px",
+    },
+  },
+}));
+
+const LetterAnimatedButton = styled(Button)(() => ({
+  WebkitTapHighlightColor: "transparent",
+  WebkitAppearance: "button",
+  backgroundColor: "#000",
+  color: "#fff",
+  cursor: "pointer",
+  fontFamily:
+    "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto",
+  fontSize: "15px",
+  lineHeight: 1.5,
+  margin: 0,
+  border: "1px solid",
+  boxSizing: "border-box",
+  display: "block",
+  overflow: "hidden",
+  padding: "0 20px",
+  position: "relative",
+  textTransform: "uppercase",
+  height: "38px",
+
+  "& .original": {
+    background: "#fff",
+    color: "#000",
+    display: "grid",
+    inset: 0,
+    placeContent: "center",
+    position: "absolute",
+    transition: "transform 0.2s cubic-bezier(0.87, 0, 0.13, 1)",
+  },
+
+  "&:hover .original": {
+    transform: "translateY(100%)",
+  },
+
+  "& .letters": {
+    display: "inline-flex",
+  },
+
+  "& span": {
+    opacity: 0,
+    transform: "translateY(-15px)",
+    transition: "transform 0.2s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.2s",
+  },
+
+  "& span:nth-of-type(2n)": {
+    transform: "translateY(15px)",
+  },
+
+  "&:hover span": {
+    opacity: 1,
+    transform: "translateY(0)",
+  },
+
+  "&:hover span:nth-of-type(2)": {
+    transitionDelay: "0.1s",
+  },
+
+  "&:hover span:nth-of-type(3)": {
+    transitionDelay: "0.2s",
+  },
+
+  "&:hover span:nth-of-type(4)": {
+    transitionDelay: "0.3s",
+  },
+
+  "&:hover span:nth-of-type(5)": {
+    transitionDelay: "0.4s",
+  },
+
+  "&:hover span:nth-of-type(6)": {
+    transitionDelay: "0.5s",
+  },
+}));
 
 const AnimatedButton = styled(Button)(() => ({
   "&.MuiButton-root": {
@@ -485,6 +741,20 @@ const PayButton = styled(Button)(() => ({
 const ButtonDemo = () => {
   return (
     <Box sx={{ display: "flex", gap: 2 }}>
+      <CircleSlideButton disableRipple>Slide</CircleSlideButton>
+
+      <LetterAnimatedButton>
+        <Box className="original">Button</Box>
+        <Box className="letters">
+          <Typography>B</Typography>
+          <Typography>U</Typography>
+          <Typography>T</Typography>
+          <Typography>T</Typography>
+          <Typography>O</Typography>
+          <Typography>N</Typography>
+        </Box>
+      </LetterAnimatedButton> 
+
       <AnimatedButton disableRipple>
         <Typography className="text-container">
           <Typography className="text" component="span">

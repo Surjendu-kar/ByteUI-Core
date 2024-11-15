@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Box, Button, styled, keyframes, Typography } from "@mui/material";
-import CodeViewer from "../CodeViewer/CodeViewer";
+import CodeViewer from "../../CodeViewer/CodeViewer";
 
 const glowAnimation = keyframes`
   from {

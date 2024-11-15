@@ -1,5 +1,5 @@
 import { Box, Button, Stack, styled } from "@mui/material";
-import CodeViewer from "../CodeViewer/CodeViewer";
+import CodeViewer from "../../CodeViewer/CodeViewer";
 
 const BaseButton = styled(Button)(() => ({
   width: "90px",

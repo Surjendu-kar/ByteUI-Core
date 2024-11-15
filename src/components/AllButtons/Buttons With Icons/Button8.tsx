@@ -1,5 +1,5 @@
 import { Button, styled, Box, Typography } from "@mui/material";
-import CodeViewer from "../CodeViewer/CodeViewer";
+import CodeViewer from "../../CodeViewer/CodeViewer";
 
 const PlayButton = styled(Button)(() => ({
   display: "flex",

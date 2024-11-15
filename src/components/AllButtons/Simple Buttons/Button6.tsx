@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Button, styled, keyframes, Typography, Box } from "@mui/material";
-import CodeViewer from "../CodeViewer/CodeViewer";
+import CodeViewer from "../../CodeViewer/CodeViewer";
 
 const gradientAnimation = keyframes`
   0% {

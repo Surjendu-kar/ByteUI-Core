@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Button, styled, Typography, Box } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
-import CodeViewer from "../CodeViewer/CodeViewer";
+import CodeViewer from "../../CodeViewer/CodeViewer";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LoginIcon from "@mui/icons-material/Login";
 
@@ -167,19 +167,19 @@ const ButtonDemo: FC = () => {
         <Typography className="button-text">Logout</Typography>
       </LogoutButton>
 
-      <FacebookButton disableRipple>
-        <span className="icon-container">
-          <FacebookIcon />
-        </span>
-        <Typography className="button-text">Facebook</Typography>
-      </FacebookButton>
-
       <LoginButton disableRipple>
         <span className="icon-container">
           <LoginIcon />
         </span>
         <Typography className="button-text">Login</Typography>
       </LoginButton>
+
+      <FacebookButton disableRipple>
+        <span className="icon-container">
+          <FacebookIcon />
+        </span>
+        <Typography className="button-text">Facebook</Typography>
+      </FacebookButton>
 
       <BackToTopButton
         disableRipple
@@ -201,19 +201,19 @@ const Button4: FC = () => {
   <Typography className="button-text">Logout</Typography>
 </LogoutButton>
 
-<FacebookButton disableRipple>
-  <span className="icon-container">
-    <FacebookIcon />
-  </span>
-  <Typography className="button-text">Facebook</Typography>
-</FacebookButton>
-
 <LoginButton disableRipple>
   <span className="icon-container">
     <LoginIcon />
   </span>
   <Typography className="button-text">Login</Typography>
 </LoginButton>
+
+<FacebookButton disableRipple>
+  <span className="icon-container">
+    <FacebookIcon />
+  </span>
+  <Typography className="button-text">Facebook</Typography>
+</FacebookButton>
 
 <BackToTopButton
   disableRipple
@@ -503,19 +503,19 @@ const ButtonDemo: FC = () => {
         <Typography className="button-text">Logout</Typography>
       </LogoutButton>
 
-      <FacebookButton disableRipple>
-        <span className="icon-container">
-          <FacebookIcon />
-        </span>
-        <Typography className="button-text">Facebook</Typography>
-      </FacebookButton>
-
       <LoginButton disableRipple>
         <span className="icon-container">
           <LoginIcon />
         </span>
         <Typography className="button-text">Login</Typography>
       </LoginButton>
+
+      <FacebookButton disableRipple>
+        <span className="icon-container">
+          <FacebookIcon />
+        </span>
+        <Typography className="button-text">Facebook</Typography>
+      </FacebookButton>
 
       <BackToTopButton
         disableRipple

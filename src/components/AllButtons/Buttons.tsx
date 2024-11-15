@@ -1,17 +1,17 @@
 import { Box, Stack, styled, Typography } from "@mui/material";
-import Button1 from "./Button1";
-import Button2 from "./Button2";
-import Button3 from "./Button3";
-import Button4 from "./Button4";
-import Button5 from "./Button5";
-import Button6 from "./Button6";
-import Button7 from "./Button7";
-import Button8 from "./Button8";
-import Button9 from "./Button9";
-import Button10 from "./Button10";
-import Button11 from "./Button11";
-import Button12 from "./Button12";
-import Button13 from "./Button13";
+import Button1 from "./Simple Buttons/Button1";
+import Button2 from "./Simple Buttons/Button2";
+import Button3 from "./Simple Buttons/Button3";
+import Button5 from "./Simple Buttons/Button5";
+import Button6 from "./Simple Buttons/Button6";
+import Button7 from "./Simple Buttons/Button7";
+import Button8 from "./Buttons With Icons/Button8";
+import Button9 from "./Buttons With Icons/Button9";
+import Button11 from "./Buttons With Icons/Button11";
+import Button10 from "./Social media Btns/Button10";
+import Button13 from "./Social media Btns/Button13";
+import Button4 from "./IconBtns/Button4";
+import Button12 from "./IconBtns/Button12";
 
 const MainTitle = styled(Typography)(({ theme }) => ({
   fontSize: "2.5rem",
@@ -79,9 +79,9 @@ function Buttons() {
           </Box>
           <Stack sx={{ gap: 4 }}>
             <Button1 />
+            <Button5 />
             <Button2 />
             <Button3 />
-            <Button5 />
             <Button6 />
             <Button7 />
           </Stack>

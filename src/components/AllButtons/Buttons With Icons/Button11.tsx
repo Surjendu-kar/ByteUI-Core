@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import { Box, Button, Tooltip, Typography } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
-import CodeViewer from "../CodeViewer/CodeViewer";
+import CodeViewer from "../../CodeViewer/CodeViewer";
 
 const StyledButton = styled(Button)(() => ({
   "--width": "150px",

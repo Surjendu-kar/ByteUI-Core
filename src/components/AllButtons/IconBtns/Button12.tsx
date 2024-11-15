@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Button, styled, Box } from "@mui/material";
-import CodeViewer from "../CodeViewer/CodeViewer";
+import CodeViewer from "../../CodeViewer/CodeViewer";
 
 const DownloadButton = styled(Button)(() => ({
   width: "40px",

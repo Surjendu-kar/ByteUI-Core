@@ -1,5 +1,5 @@
 import { Button, styled, keyframes, Box } from "@mui/material";
-import CodeViewer from "../CodeViewer/CodeViewer";
+import CodeViewer from "../../CodeViewer/CodeViewer";
 
 const glitchAnimation = keyframes`
   0% {
@@ -117,18 +117,109 @@ const GreenButton = styled(RedButton)(() => ({
   },
 }));
 
+const glitchKeyframes = keyframes`
+  0% {
+    clip-path: inset(50% 50% 50% 50%);
+    transform: translate(0px,-10px);
+  }
+  10% {
+    clip-path: inset(31% 0 40% 0);
+    transform: translate(-10px,10px);
+  }
+  20% {
+    clip-path: inset(39% 0 15% 0);
+    transform: translate(10px,0px);
+  }
+  30% {
+    clip-path: inset(45% 0 40% 0);
+    transform: translate(-10px,10px);
+  }
+  40% {
+    clip-path: inset(45% 0 6% 0);
+    transform: translate(10px,-10px);
+  }
+  50% {
+    clip-path: inset(14% 0 61% 0);
+    transform: translate(-10px,10px);
+  }
+  60% {
+    clip-path: inset(50% 50% 50% 50%);
+    transform: translate(10px,-10px);
+  }
+  70% {
+    clip-path: inset(39% 0 15% 0);
+    transform: translate(-10px,10px);
+  }
+  80% {
+    clip-path: inset(31% 0 40% 0);
+    transform: translate(10px,-10px);
+  }
+  90% {
+    clip-path: inset(45% 0 40% 0);
+    transform: translate(-10px,10px);
+  }
+  100% {
+    clip-path: inset(50% 50% 50% 50%);
+    transform: translate(0);
+  }
+`;
+
+const GlitchButton = styled(Button)(() => ({
+  padding: "5px 40px",
+  fontSize: "15px",
+  border: "none",
+  borderRadius: "5px",
+  color: "white",
+  backgroundColor: "transparent",
+  position: "relative",
+  fontFamily: '"JetBrains Mono", monospace',
+  letterSpacing: "3px",
+  cursor: "pointer",
+  transition: "all 0.3s ease",
+
+  "&::after": {
+    content: '"GLITCH"',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "10px 50px",
+    clipPath: "inset(50% 50% 50% 50%)",
+    textShadow: "-3px -3px 0px #1df2f0, 3px 3px 0px #E94BE8",
+    backgroundColor: "transparent",
+  },
+
+  "&:hover": {
+    backgroundColor: "transparent",
+    border: "1px solid rgb(0, 255, 213)",
+    boxShadow: "0px 10px 10px -10px rgb(0, 255, 213)",
+    textShadow: "-1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8",
+  },
+
+  "&:hover::after": {
+    animation: `${glitchKeyframes} 1s steps(2, end)`,
+    border: "3px solid rgb(0, 255, 213)",
+  },
+}));
+
 const ButtonDemo = () => {
   return (
     <Box sx={{ display: "flex", gap: 2 }}>
       <RedButton>Button</RedButton>
       <GreenButton>Button</GreenButton>
+      <GlitchButton>GLITCH</GlitchButton>
     </Box>
   );
 };
 
 const Button3 = () => {
   const shortCode = `<RedButton>Button</RedButton>
-<GreenButton>Button</GreenButton>`;
+<GreenButton>Button</GreenButton>
+<GlitchButton>GLITCH</GlitchButton>`;
 
   const fullCode = `import { Button, styled, keyframes, Box } from "@mui/material";
   
@@ -179,7 +270,7 @@ const glitchAnimation = keyframes\`
   }
 \`;
 
-const RedButton = styled(Button)(({ theme }) => ({
+const RedButton = styled(Button)(() => ({
   height: "40px",
   padding: "0 16px",
   backgroundColor: "#FCFCFD",
@@ -301,11 +392,101 @@ const GreenButton = styled(Button)(() => ({
   },
 }));
 
+const glitchKeyframes = keyframes\`
+  0% {
+    clip-path: inset(50% 50% 50% 50%);
+    transform: translate(0px,-10px);
+  }
+  10% {
+    clip-path: inset(31% 0 40% 0);
+    transform: translate(-10px,10px);
+  }
+  20% {
+    clip-path: inset(39% 0 15% 0);
+    transform: translate(10px,0px);
+  }
+  30% {
+    clip-path: inset(45% 0 40% 0);
+    transform: translate(-10px,10px);
+  }
+  40% {
+    clip-path: inset(45% 0 6% 0);
+    transform: translate(10px,-10px);
+  }
+  50% {
+    clip-path: inset(14% 0 61% 0);
+    transform: translate(-10px,10px);
+  }
+  60% {
+    clip-path: inset(50% 50% 50% 50%);
+    transform: translate(10px,-10px);
+  }
+  70% {
+    clip-path: inset(39% 0 15% 0);
+    transform: translate(-10px,10px);
+  }
+  80% {
+    clip-path: inset(31% 0 40% 0);
+    transform: translate(10px,-10px);
+  }
+  90% {
+    clip-path: inset(45% 0 40% 0);
+    transform: translate(-10px,10px);
+  }
+  100% {
+    clip-path: inset(50% 50% 50% 50%);
+    transform: translate(0);
+  }
+\`;
+
+const GlitchButton = styled(Button)(() => ({
+  padding: "5px 40px",
+  fontSize: "15px",
+  border: "none",
+  borderRadius: "5px",
+  color: "white",
+  backgroundColor: "transparent",
+  position: "relative",
+  fontFamily: '"JetBrains Mono", monospace',
+  letterSpacing: "3px",
+  cursor: "pointer",
+  transition: "all 0.3s ease",
+
+  "&::after": {
+    content: '"GLITCH"',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "10px 50px",
+    clipPath: "inset(50% 50% 50% 50%)",
+    textShadow: "-3px -3px 0px #1df2f0, 3px 3px 0px #E94BE8",
+    backgroundColor: "transparent",
+  },
+
+  "&:hover": {
+    backgroundColor: "transparent",
+    border: "1px solid rgb(0, 255, 213)",
+    boxShadow: "0px 10px 10px -10px rgb(0, 255, 213)",
+    textShadow: "-1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8",
+  },
+
+  "&:hover::after": {
+    animation: \`\${glitchKeyframes} 1s steps(2, end)\`,
+    border: "3px solid rgb(0, 255, 213)",
+  },
+}));
+
 const ButtonDemo = () => {
   return (
     <Box sx={{ display: "flex", gap: 2 }}>
       <RedButton>Button</RedButton>
       <GreenButton>Button</GreenButton>
+      <GlitchButton>GLITCH</GlitchButton>
     </Box>
   );
 };

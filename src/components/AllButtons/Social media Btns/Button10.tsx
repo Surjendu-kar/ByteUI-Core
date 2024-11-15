@@ -1,6 +1,6 @@
 import { Box, IconButton, styled, Typography } from "@mui/material";
 import { Facebook, Twitter, Instagram } from "@mui/icons-material";
-import CodeViewer from "../CodeViewer/CodeViewer";
+import CodeViewer from "../../CodeViewer/CodeViewer";
 
 const SocialContainer = styled(Box)(() => ({
   display: "inline-flex",
