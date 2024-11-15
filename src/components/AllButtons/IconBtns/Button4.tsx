@@ -4,6 +4,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import CodeViewer from "../../CodeViewer/CodeViewer";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LoginIcon from "@mui/icons-material/Login";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const LogoutButton = styled(Button)(() => ({
   display: "flex",
@@ -157,6 +158,58 @@ const BackToTopButton = styled(Button)(() => ({
   },
 }));
 
+const DeleteButton = styled(Button)(() => ({
+  width: "42px",
+  height: "42px",
+  borderRadius: "50%",
+  backgroundColor: "rgb(20, 20, 20)",
+  border: "none",
+  fontWeight: 600,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.164)",
+  cursor: "pointer",
+  transition: "all 0.3s",
+  overflow: "hidden",
+  position: "relative",
+  minWidth: "unset",
+  padding: 0,
+
+  "& svg": {
+    width: "20px",
+    height: "20px",
+    transition: "all 0.3s",
+    fill: "white",
+  },
+
+  "&:hover": {
+    width: "140px",
+    borderRadius: "50px",
+    backgroundColor: "rgb(255, 69, 69)",
+  },
+
+  "&:hover svg": {
+    width: "60px",
+    height: "45px",
+    transform: "translateY(60%)",
+  },
+
+  "&::before": {
+    position: "absolute",
+    top: "-20px",
+    content: '"Delete"',
+    color: "white",
+    fontSize: "2px",
+    transition: "all 0.3s",
+  },
+
+  "&:hover::before": {
+    fontSize: "13px",
+    transform: "translateY(30px)",
+  },
+}));
+
 const ButtonDemo: FC = () => {
   return (
     <Box sx={{ display: "flex", gap: 2 }}>
@@ -189,6 +242,10 @@ const ButtonDemo: FC = () => {
           <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
         </svg>
       </BackToTopButton>
+
+      <DeleteButton disableRipple>
+        <DeleteIcon />
+      </DeleteButton>
     </Box>
   );
 };
@@ -222,13 +279,18 @@ const Button4: FC = () => {
   <svg viewBox="0 0 384 512">
     <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
   </svg>
-</BackToTopButton>`;
+</BackToTopButton>
+
+<DeleteButton disableRipple>
+  <DeleteIcon />
+</DeleteButton>`;
 
   const fullCode = `import { FC } from "react";
 import { Button, styled, Typography, Box } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LoginIcon from "@mui/icons-material/Login";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const LogoutButton = styled(Button)(() => ({
   display: "flex",
@@ -492,6 +554,58 @@ const BackToTopButton = styled(Button)(() => ({
   },
 }));
 
+const DeleteButton = styled(Button)(() => ({
+  width: "42px",
+  height: "42px",
+  borderRadius: "50%",
+  backgroundColor: "rgb(20, 20, 20)",
+  border: "none",
+  fontWeight: 600,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.164)",
+  cursor: "pointer",
+  transition: "all 0.3s",
+  overflow: "hidden",
+  position: "relative",
+  minWidth: "unset",
+  padding: 0,
+
+  "& svg": {
+    width: "20px",
+    height: "20px",
+    transition: "all 0.3s",
+    fill: "white",
+  },
+
+  "&:hover": {
+    width: "140px",
+    borderRadius: "50px",
+    backgroundColor: "rgb(255, 69, 69)",
+  },
+
+  "&:hover svg": {
+    width: "60px",
+    height: "45px",
+    transform: "translateY(60%)",
+  },
+
+  "&::before": {
+    position: "absolute",
+    top: "-20px",
+    content: '"Delete"',
+    color: "white",
+    fontSize: "2px",
+    transition: "all 0.3s",
+  },
+
+  "&:hover::before": {
+    fontSize: "13px",
+    transform: "translateY(30px)",
+  },
+}));
+
 
 const ButtonDemo: FC = () => {
   return (
@@ -525,6 +639,10 @@ const ButtonDemo: FC = () => {
           <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
         </svg>
       </BackToTopButton>
+
+      <DeleteButton disableRipple>
+        <DeleteIcon />
+      </DeleteButton>
     </Box>
   );
 };
