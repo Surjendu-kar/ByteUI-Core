@@ -342,12 +342,12 @@ const ButtonDemo = () => {
       <LetterAnimatedButton>
         <Box className="original">Button</Box>
         <Box className="letters">
-          <Typography>B</Typography>
-          <Typography>U</Typography>
-          <Typography>T</Typography>
-          <Typography>T</Typography>
-          <Typography>O</Typography>
-          <Typography>N</Typography>
+          <span>B</span>
+          <span>U</span>
+          <span>T</span>
+          <span>T</span>
+          <span>O</span>
+          <span>N</span>
         </Box>
       </LetterAnimatedButton>
 
