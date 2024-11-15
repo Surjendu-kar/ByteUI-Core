@@ -212,7 +212,7 @@ const DeleteButton = styled(Button)(() => ({
 
 const ButtonDemo: FC = () => {
   return (
-    <Box sx={{ display: "flex", gap: 2 }}>
+    <Box sx={{ display: "flex", alignItems: "center",gap: 2 }}>
       <LogoutButton disableRipple>
         <span className="icon-container">
           <LogoutIcon />

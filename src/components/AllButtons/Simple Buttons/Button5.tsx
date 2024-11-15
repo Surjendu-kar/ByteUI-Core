@@ -336,7 +336,7 @@ const PayButton = styled(Button)(() => ({
 
 const ButtonDemo = () => {
   return (
-    <Box sx={{ display: "flex", gap: 2 }}>
+    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
       <CircleSlideButton disableRipple>Slide</CircleSlideButton>
 
       <LetterAnimatedButton>

@@ -12,6 +12,7 @@ import Button10 from "./Social media Btns/Button10";
 import Button13 from "./Social media Btns/Button13";
 import Button4 from "./IconBtns/Button4";
 import Button12 from "./IconBtns/Button12";
+import Button14 from "./IconBtns/Button14";
 
 const MainTitle = styled(Typography)(({ theme }) => ({
   fontSize: "2.5rem",
@@ -34,6 +35,8 @@ const Description = styled(Typography)(({ theme }) => ({
   color: "rgba(255, 255, 255, 0.8)",
   marginBottom: theme.spacing(1),
 }));
+
+
 
 function Buttons() {
   return (
@@ -122,6 +125,7 @@ function Buttons() {
           <Stack sx={{ gap: 4 }}>
             <Button10 />
             <Button13 />
+            {/* <Button15 /> */}
           </Stack>
         </Stack>
 
@@ -141,6 +145,7 @@ function Buttons() {
           <Stack sx={{ gap: 4 }}>
             <Button4 />
             <Button12 />
+            <Button14 />
           </Stack>
         </Stack>
       </Stack>

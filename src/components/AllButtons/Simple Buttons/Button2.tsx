@@ -113,6 +113,7 @@ const ButtonDemo = () => {
     <Box
       sx={{
         display: "flex",
+        alignItems: "center",
         gap: 2,
       }}
     >

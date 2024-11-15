@@ -116,7 +116,7 @@ const SendIcon: React.FC<SendIconProps> = ({ width = 24, height = 24 }) => (
 
 const ButtonDemo: React.FC = () => {
   return (
-    <Box sx={{ display: "flex", gap: 2 }}>
+    <Box sx={{ display: "flex",alignItems: "center", gap: 2 }}>
       <EnhancedStyledButton icon={<SendIcon />}>Send</EnhancedStyledButton>
       <EnhancedStyledButton icon={<LocalShippingIcon />}>
         Ship

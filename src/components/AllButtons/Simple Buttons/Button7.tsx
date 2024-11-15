@@ -262,7 +262,7 @@ export default ButtonDemo;`;
 
   const ButtonDemo: FC = () => {
     return (
-      <Box sx={{ display: "flex", gap: 1 }}>
+      <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
         <StyledRedButton>
           <Typography className="glow-effect"></Typography>
           <Typography>Red Button</Typography>
