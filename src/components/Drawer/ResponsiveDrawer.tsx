@@ -17,7 +17,6 @@ import Installation from "../Installation/Installation";
 
 const drawerWidth = 200;
 
-// Create a dark theme
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
