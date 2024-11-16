@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Buttons from "../AllButtons/Buttons";
+import Installation from "../Installation/Installation";
 
 const drawerWidth = 200;
 
@@ -40,6 +41,9 @@ export default function ResponsiveDrawer(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
+  const [currentSection, setCurrentSection] = React.useState<
+    "installation" | "button"
+  >("installation");
 
   const handleDrawerClose = () => {
     setIsClosing(true);
@@ -61,9 +65,16 @@ export default function ResponsiveDrawer(props: Props) {
       <Toolbar />
       <Divider />
       <List>
-        {["Button"].map((text) => (
+        {["Installation", "Button"].map((text) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
+            <ListItemButton
+              onClick={() =>
+                setCurrentSection(
+                  text.toLowerCase() as "installation" | "button"
+                )
+              }
+              selected={currentSection === text.toLowerCase()}
+            >
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
@@ -163,7 +174,7 @@ export default function ResponsiveDrawer(props: Props) {
             bgcolor: "background.default",
           }}
         >
-          <Buttons />
+          {currentSection === "installation" ? <Installation /> : <Buttons />}
         </Box>
       </Box>
     </ThemeProvider>
