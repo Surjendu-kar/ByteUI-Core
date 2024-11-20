@@ -244,7 +244,7 @@ const EditButton = styled(Button)(() => ({
 
 const ButtonDemo: FC = () => {
   return (
-    <Box sx={{ display: "flex",alignItems: "center", gap: 2 }}>
+    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
       <AddButton disableRipple title="Add New">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path
