@@ -12,8 +12,9 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Buttons from "../AllButtons/Buttons";
-import Installation from "../Installation/Installation";
+import Installation from "../AllSections/Installation/Installation";
+import Loaders from "../AllSections/Loaders/Loaders";
+import Buttons from "../AllSections/Buttons/Buttons";
 
 const drawerWidth = 200;
 
@@ -41,7 +42,7 @@ export default function ResponsiveDrawer(props: Props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
   const [currentSection, setCurrentSection] = React.useState<
-    "installation" | "button"
+    "installation" | "button" | "loaders"
   >("installation");
 
   const handleDrawerClose = () => {
@@ -64,12 +65,12 @@ export default function ResponsiveDrawer(props: Props) {
       <Toolbar />
       <Divider />
       <List>
-        {["Installation", "Button"].map((text) => (
+        {["Installation", "Button", "Loaders"].map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton
               onClick={() =>
                 setCurrentSection(
-                  text.toLowerCase() as "installation" | "button"
+                  text.toLowerCase() as "installation" | "button" | "loaders"
                 )
               }
               selected={currentSection === text.toLowerCase()}
@@ -173,7 +174,13 @@ export default function ResponsiveDrawer(props: Props) {
             bgcolor: "background.default",
           }}
         >
-          {currentSection === "installation" ? <Installation /> : <Buttons />}
+          {currentSection === "installation" ? (
+            <Installation />
+          ) : currentSection === "button" ? (
+            <Buttons />
+          ) : (
+            <Loaders />
+          )}
         </Box>
       </Box>
     </ThemeProvider>
