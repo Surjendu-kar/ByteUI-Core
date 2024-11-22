@@ -1,4 +1,5 @@
 export enum Path {
+  Home = "/",
   Installation = "installation",
   Buttons = "button",
   Loaders = "loader",

@@ -1,18 +1,18 @@
 import { Stack } from "@mui/material";
 
-function Footer() {
+function Home() {
   return (
     <Stack
       sx={{
         alignItems: "center",
-        color: "#ffff",
-        padding: "1rem 0",
+        justifyContent: "center",
+        color: "white",
         marginTop: "auto",
       }}
     >
-      @Surjendu kar
+      ByteUI-Core
     </Stack>
   );
 }
 
-export default Footer;
+export default Home;

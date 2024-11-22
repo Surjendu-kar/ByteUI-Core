@@ -5,9 +5,10 @@ import Loaders from "./components/AllSections/Loaders/Loaders";
 import { Path } from "./enums";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
-import { Box, Stack, styled } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import Layout from "./layout";
 import Footer from "./components/Footer/Footer";
+import Home from "./components/AllSections/Home/Home";
 
 const MainWrapper = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -40,6 +41,7 @@ function App() {
       <MainWrapper>
         <ContentWrapper>
           <Routes>
+            <Route element={<Home />} path={Path.Home} />
             <Route element={<Installation />} path={Path.Installation} />
             <Route element={<Buttons />} path={Path.Buttons} />
             <Route element={<Loaders />} path={Path.Loaders} />
