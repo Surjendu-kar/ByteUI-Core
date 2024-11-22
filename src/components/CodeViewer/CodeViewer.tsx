@@ -11,9 +11,7 @@ const DemoSection = styled(Box)(({ theme }) => ({
   bgcolor: "#1f1f21",
   borderTopLeftRadius: 5,
   borderTopRightRadius: 5,
-  [theme.breakpoints.down("sm")]: {
-    
-  },
+  [theme.breakpoints.down("sm")]: {},
 }));
 
 const CodeSection = styled(Box)(({ theme }) => ({
