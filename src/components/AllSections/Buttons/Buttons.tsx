@@ -40,8 +40,11 @@ const MainTitle = styled(Typography)(({ theme }) => ({
   color: "#fff",
   marginBottom: theme.spacing(2),
   textAlign: "left",
-  
-  [theme.breakpoints.down("sm")]: { fontSize: "2.5rem" },
+
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "2rem",
+    marginBottom: theme.spacing(0),
+  },
 }));
 
 const Title = styled(Typography)(({ theme }) => ({
@@ -57,7 +60,13 @@ const Description = styled(Typography)(({ theme }) => ({
   fontSize: "16px",
   color: "rgba(255, 255, 255, 0.8)",
   marginBottom: theme.spacing(1),
-  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("sm")]: { fontSize: "14px" },
+}));
+
+const Item = styled(Typography)(({ theme }) => ({
+  fontSize: "15px",
+ 
+  [theme.breakpoints.down("sm")]: { fontSize: "12px" },
 }));
 
 function Buttons() {
@@ -85,13 +94,12 @@ function Buttons() {
             <ul
               style={{
                 color: "rgba(255, 255, 255, 0.8)",
-                marginLeft: "20px",
+                marginLeft: "10px",
               }}
             >
-              <li>Live demonstration of the button style</li>
-              <li>Copyable code snippets for quick implementation</li>
-              <li>Comprehensive implementation examples using Material-UI</li>
-              <li>Customization options and variants</li>
+              <Item>• Live demonstration of the button style</Item>
+              <Item>• Copyable code snippets for quick implementation</Item>
+              <Item>• Customization options and variants</Item>
             </ul>
           </Box>
 

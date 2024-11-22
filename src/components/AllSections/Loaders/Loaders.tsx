@@ -1,6 +1,25 @@
 import { Box, Stack, styled, Typography } from "@mui/material";
 import Loaders1 from "../../AllLoaders/Loaders1";
 import Loaders2 from "../../AllLoaders/Loaders2";
+const MainContainer = styled(Stack)(({ theme }) => ({
+  width: "100%",
+  alignItems: "center",
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("sm")]: {},
+}));
+
+const Container = styled(Stack)(({ theme }) => ({
+  width: "70%",
+  margin: "0 auto",
+  alignItems: "flex-start",
+  padding: "1rem 0.5rem 4rem",
+  gap: theme.spacing(10),
+
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("sm")]: { width: "95%" },
+}));
 
 const MainTitle = styled(Typography)(({ theme }) => ({
   fontSize: "2.5rem",
@@ -26,16 +45,8 @@ const Description = styled(Typography)(({ theme }) => ({
 
 function Loaders() {
   return (
-    <Stack sx={{ width: "100%", alignItems: "center" }}>
-      <Stack
-        sx={{
-          width: "70%",
-          margin: "0 auto",
-          alignItems: "flex-start",
-          padding: "1rem 0.5rem 4rem",
-          gap: 10,
-        }}
-      >
+    <MainContainer sx={{ overflow: "hidden" }}>
+      <Container>
         <Stack sx={{ width: "100%", gap: 3 }}>
           <Box>
             <MainTitle>Loaders</MainTitle>
@@ -48,8 +59,8 @@ function Loaders() {
             <Loaders2 />
           </Stack>
         </Stack>
-      </Stack>
-    </Stack>
+      </Container>
+    </MainContainer>
   );
 }
 

@@ -3,7 +3,57 @@ import { Box, Paper, IconButton, Button, styled } from "@mui/material";
 import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
 import CheckIcon from "@mui/icons-material/Check";
 
-const ExpandButton = styled(Button)(() => ({
+const DemoSection = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(1.25),
+  border: "1px solid rgba(255, 255, 255, 0.1)",
+  display: "flex",
+  justifyContent: "center",
+  bgcolor: "#1f1f21",
+  borderTopLeftRadius: 5,
+  borderTopRightRadius: 5,
+  [theme.breakpoints.down("sm")]: {
+    
+  },
+}));
+
+const CodeSection = styled(Box)(({ theme }) => ({
+  position: "relative",
+  padding: theme.spacing(1.5),
+  border: "1px solid rgba(255, 255, 255, 0.1)",
+  borderBottomLeftRadius: 5,
+  borderBottomRightRadius: 5,
+  fontFamily: "monospace",
+  fontSize: "0.875rem",
+  color: "#cdd6f4",
+  maxHeight: "300px",
+  overflow: "auto",
+  "&:hover": {
+    border: "1px solid #3b82f680",
+  },
+  scrollbarWidth: "thin",
+  scrollbarColor: "rgba(255, 255, 255, 0.1) transparent",
+  "&::-webkit-scrollbar": {
+    width: "6px",
+    height: "6px",
+  },
+  "&::-webkit-scrollbar-track": {
+    background: "transparent",
+  },
+  "&::-webkit-scrollbar-corner": {
+    background: "transparent",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    background: "rgba(255, 255, 255, 0.1)",
+    borderRadius: "3px",
+    "&:hover": {
+      background: "rgba(255, 255, 255, 0.2)",
+    },
+  },
+
+  [theme.breakpoints.down("sm")]: {},
+}));
+
+const ExpandButton = styled(Button)(({ theme }) => ({
   backgroundColor: "#1a1b26",
   color: "#89b4fa",
   padding: "2px 15px",
@@ -17,6 +67,8 @@ const ExpandButton = styled(Button)(() => ({
     borderColor: "#89b4fa",
     boxShadow: "0 0 15px rgba(137, 180, 250, 0.2)",
   },
+
+  [theme.breakpoints.down("sm")]: {},
 }));
 
 interface CodeViewerProps {
@@ -49,24 +101,13 @@ const CodeViewer: FC<CodeViewerProps> = ({
     >
       {/* Demo Section */}
       {Demo && (
-        <Box
-          sx={{
-            p: 3,
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-            display: "flex",
-            justifyContent: "center",
-            bgcolor: "#1f1f21",
-            borderTopLeftRadius: 5,
-            borderTopRightRadius: 5,
-          }}
-        >
+        <DemoSection>
           <Demo />
-        </Box>
+        </DemoSection>
       )}
 
-      {/* Code Section */}
+      {/* Expand & Copy Section */}
       <Box sx={{ bgcolor: "#101011", borderRadius: 2 }}>
-        {/* Header */}
         <Box
           sx={{
             display: "flex",
@@ -97,46 +138,11 @@ const CodeViewer: FC<CodeViewerProps> = ({
         </Box>
 
         {/* Code Content */}
-        <Box
-          sx={{
-            position: "relative",
-            p: 2,
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-            borderBottomLeftRadius: 5,
-            borderBottomRightRadius: 5,
-            fontFamily: "monospace",
-            fontSize: "0.875rem",
-            color: "#cdd6f4",
-            maxHeight: "300px",
-            overflow: "auto",
-            "&:hover": {
-              border: "1px solid #3b82f680",
-            },
-            scrollbarWidth: "thin",
-            scrollbarColor: "rgba(255, 255, 255, 0.1) transparent",
-            "&::-webkit-scrollbar": {
-              width: "6px",
-              height: "6px",
-            },
-            "&::-webkit-scrollbar-track": {
-              background: "transparent",
-            },
-            "&::-webkit-scrollbar-corner": {
-              background: "transparent",
-            },
-            "&::-webkit-scrollbar-thumb": {
-              background: "rgba(255, 255, 255, 0.1)",
-              borderRadius: "3px",
-              "&:hover": {
-                background: "rgba(255, 255, 255, 0.2)",
-              },
-            },
-          }}
-        >
+        <CodeSection>
           <pre style={{ margin: 0 }}>
             <code>{isExpanded ? fullCode : shortCode}</code>
           </pre>
-        </Box>
+        </CodeSection>
       </Box>
     </Paper>
   );

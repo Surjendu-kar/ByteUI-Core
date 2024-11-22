@@ -20,13 +20,16 @@ const MainWrapper = styled(Box)(({ theme }) => ({
   },
 }));
 
-const ContentWrapper = styled(Box)({
+const ContentWrapper = styled(Box)(({ theme }) => ({
   display: "flex",
   flex: "1 1 auto",
   flexDirection: "column",
   overflow: "auto",
   paddingTop: "5rem",
-});
+  [theme.breakpoints.down("sm")]: {
+    paddingTop: "3rem",
+  },
+}));
 
 function App() {
   return (
