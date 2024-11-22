@@ -48,7 +48,9 @@ const CodeSection = styled(Box)(({ theme }) => ({
     },
   },
 
-  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "0.8rem",
+  },
 }));
 
 const ExpandButton = styled(Button)(({ theme }) => ({
@@ -66,7 +68,7 @@ const ExpandButton = styled(Button)(({ theme }) => ({
     boxShadow: "0 0 15px rgba(137, 180, 250, 0.2)",
   },
 
-  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("sm")]: { fontSize: "10px", padding: "2px 13px" },
 }));
 
 interface CodeViewerProps {
@@ -128,9 +130,17 @@ const CodeViewer: FC<CodeViewerProps> = ({
             }}
           >
             {copied ? (
-              <CheckIcon fontSize="small" sx={{ fontSize: 16 }} />
+              <CheckIcon
+                sx={{
+                  fontSize: { xs: 14, sm: 16 },
+                }}
+              />
             ) : (
-              <ContentCopyOutlinedIcon fontSize="small" sx={{ fontSize: 16 }} />
+              <ContentCopyOutlinedIcon
+                sx={{
+                  fontSize: { xs: 14, sm: 16 },
+                }}
+              />
             )}
           </IconButton>
         </Box>
