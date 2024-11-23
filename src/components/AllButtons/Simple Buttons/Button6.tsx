@@ -1,19 +1,13 @@
-import { Box } from "@mui/material";
 import CodeViewer from "../../CodeViewer/CodeViewer";
 import { BorderColorButton, GoldButton } from "@byteui/mui-core";
+import { CodeViewerContainer } from "../../Shared/StyledComponents";
 
 const ButtonDemo = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        gap: 2,
-      }}
-    >
+    <CodeViewerContainer>
       <BorderColorButton>Button</BorderColorButton>
       <GoldButton>Click Me</GoldButton>
-    </Box>
+    </CodeViewerContainer>
   );
 };
 

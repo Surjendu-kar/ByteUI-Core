@@ -1,20 +1,13 @@
-import { Box } from "@mui/material";
 import CodeViewer from "../../CodeViewer/CodeViewer";
 import { AmongUsButton, BatmanButton } from "@byteui/mui-core";
+import { CodeViewerContainer } from "../../Shared/StyledComponents";
 
 const ButtonDemo = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        gap: 2,
-        alignItems: "center",
-        flexWrap: "wrap",
-      }}
-    >
+    <CodeViewerContainer>
       <AmongUsButton firstText="Start" secondText="Go" />
       <BatmanButton>PLAY NOW</BatmanButton>
-    </Box>
+    </CodeViewerContainer>
   );
 };
 

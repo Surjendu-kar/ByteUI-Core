@@ -1,15 +1,15 @@
-import { Box } from "@mui/material";
 import CodeViewer from "../../CodeViewer/CodeViewer";
 import { AddIcon, EditIcon, LikeIcon, SearchIcon } from "@byteui/mui-core";
+import { CodeViewerContainer } from "../../Shared/StyledComponents";
 
 const ButtonDemo = () => {
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <CodeViewerContainer>
       <AddIcon />
       <SearchIcon />
       <LikeIcon />
       <EditIcon />
-    </Box>
+    </CodeViewerContainer>
   );
 };
 
@@ -24,7 +24,7 @@ import { AddIcon, EditIcon, LikeIcon, SearchIcon } from "@byteui/mui-core";
 
 const ButtonDemo = () => {
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <Box sx={{ display: "flex", alignItems: "center",flexWrap: "wrap",justifyContent: "center", gap: 2 }}>
       <AddIcon />
       <SearchIcon />
       <LikeIcon />

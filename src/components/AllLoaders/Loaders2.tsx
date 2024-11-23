@@ -1,12 +1,12 @@
-import { Box } from "@mui/material";
 import CodeViewer from "../CodeViewer/CodeViewer";
 import { ShadowLoader, ThreeBodyLoader } from "@byteui/mui-core";
+import { CodeViewerContainer } from "../Shared/StyledComponents";
 
 const LoaderDemo = () => (
-  <Box sx={{ display: "flex", gap: 10, alignItems: "center" }}>
+  <CodeViewerContainer isLoader>
     <ThreeBodyLoader />
     <ShadowLoader />
-  </Box>
+  </CodeViewerContainer>
 );
 
 const Loaders2 = () => {

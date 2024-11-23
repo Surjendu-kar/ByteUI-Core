@@ -1,19 +1,13 @@
-import { Box } from "@mui/material";
 import CodeViewer from "../../CodeViewer/CodeViewer";
 import { RotateButton, TextRevealButton } from "@byteui/mui-core";
+import { CodeViewerContainer } from "../../Shared/StyledComponents";
 
 const ButtonDemo = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        gap: 2,
-      }}
-    >
+    <CodeViewerContainer>
       <RotateButton>Button</RotateButton>
       <TextRevealButton disableRipple>Button</TextRevealButton>
-    </Box>
+    </CodeViewerContainer>
   );
 };
 

@@ -1,10 +1,10 @@
-import { Box } from "@mui/material";
 import CodeViewer from "../../CodeViewer/CodeViewer";
 import { CustomGlitchButton, GlitchButton } from "@byteui/mui-core";
+import { CodeViewerContainer } from "../../Shared/StyledComponents";
 
 const ButtonDemo = () => {
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <CodeViewerContainer>
       <CustomGlitchButton customBgColor="#FF013C" customColor="black">
         Red Button
       </CustomGlitchButton>
@@ -14,7 +14,7 @@ const ButtonDemo = () => {
       <CustomGlitchButton customBgColor="#00ff58" customColor="black">
         Green Button
       </CustomGlitchButton>
-    </Box>
+    </CodeViewerContainer>
   );
 };
 
@@ -34,7 +34,7 @@ import { CustomGlitchButton, GlitchButton } from "@byteui/mui-core";
 
 const ButtonDemo = () => {
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <Box sx={{ display: "flex", alignItems: "center",flexWrap: "wrap",justifyContent: "center", gap: 2 }}>
       <CustomGlitchButton customBgColor="#FF013C" customColor="black">
         Red Button
       </CustomGlitchButton>

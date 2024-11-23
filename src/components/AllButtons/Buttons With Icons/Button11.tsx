@@ -1,20 +1,20 @@
-import { Box } from "@mui/material";
 import CodeViewer from "../../CodeViewer/CodeViewer";
 import {
   DownloadIconButton,
   SimpleDownloadButton,
   TooltipDownloadButton,
 } from "@byteui/mui-core";
+import { CodeViewerContainer } from "../../Shared/StyledComponents";
 
 const ButtonDemo = () => {
   return (
-    <Box style={{ display: "flex", alignItems: "center", gap: 4 }}>
+    <CodeViewerContainer>
       <TooltipDownloadButton tooltipSize="Size: 10Mb">
         Download
       </TooltipDownloadButton>
       <SimpleDownloadButton>Download</SimpleDownloadButton>
       <DownloadIconButton />
-    </Box>
+    </CodeViewerContainer>
   );
 };
 

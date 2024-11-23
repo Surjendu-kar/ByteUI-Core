@@ -1,19 +1,13 @@
-import { Box } from "@mui/material";
 import CodeViewer from "../CodeViewer/CodeViewer";
 import { BarsLoader, MatrixLoader, SimpleLoader } from "@byteui/mui-core";
+import { CodeViewerContainer } from "../Shared/StyledComponents";
 
 const LoaderDemo = () => (
-  <Box
-    sx={{
-      display: "flex",
-      gap: 10,
-      alignItems: "center",
-    }}
-  >
+  <CodeViewerContainer isLoader>
     <BarsLoader />
     <SimpleLoader />
     <MatrixLoader />
-  </Box>
+  </CodeViewerContainer>
 );
 
 const Loaders1 = () => {

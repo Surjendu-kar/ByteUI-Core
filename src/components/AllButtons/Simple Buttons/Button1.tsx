@@ -1,13 +1,13 @@
 import CodeViewer from "../../CodeViewer/CodeViewer";
 import { LeftArrowButton } from "@byteui/mui-core";
 import { RightArrowButton } from "@byteui/mui-core";
-import { Box } from "@mui/material";
+import { CodeViewerContainer } from "../../Shared/StyledComponents";
 
 const ButtonDemo = () => (
-  <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+  <CodeViewerContainer>
     <LeftArrowButton>left</LeftArrowButton>
     <RightArrowButton>Right</RightArrowButton>
-  </Box>
+  </CodeViewerContainer>
 );
 
 const Button1 = () => {

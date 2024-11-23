@@ -8,14 +8,7 @@ import {
   TooltipTwitterBtn,
   TwitterBtn,
 } from "@byteui/mui-core";
-
-const SocialContainer = styled(Box)(() => ({
-  display: "inline-flex",
-  width: "100%",
-  justifyContent: "center",
-  gap: "2rem",
-  alignItems: "center",
-}));
+import { CodeViewerContainer } from "../../Shared/StyledComponents";
 
 const ButtonsContainer = styled(Box)(() => ({
   display: "inline-flex",
@@ -25,7 +18,7 @@ const ButtonsContainer = styled(Box)(() => ({
 
 const ButtonDemo = () => {
   return (
-    <SocialContainer>
+    <CodeViewerContainer>
       {/* First Style */}
       <ButtonsContainer>
         <TooltipFacebookBtn />
@@ -39,7 +32,7 @@ const ButtonDemo = () => {
         <TwitterBtn />
         <InstagramBtn />
       </ButtonsContainer>
-    </SocialContainer>
+    </CodeViewerContainer>
   );
 };
 

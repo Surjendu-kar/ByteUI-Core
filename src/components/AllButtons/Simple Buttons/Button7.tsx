@@ -1,6 +1,6 @@
-import { Box } from "@mui/material";
 import CodeViewer from "../../CodeViewer/CodeViewer";
 import { Custom3DButton } from "@byteui/mui-core";
+import { CodeViewerContainer } from "../../Shared/StyledComponents";
 
 const Button7 = () => {
   const shortCode = `<Custom3DButton customColor="#f87171" customBgcolor="#450a0a">
@@ -20,7 +20,7 @@ import { Custom3DButton } from "@byteui/mui-core";
 
 const ButtonDemo = () => {
   return (
-    <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+    <Box sx={{ display: "flex", alignItems: "center",flexWrap: "wrap",justifyContent: "center", gap: 2 }}>
       <Custom3DButton customColor="#f87171" customBgcolor="#450a0a">
         Red Button
       </Custom3DButton>
@@ -40,7 +40,7 @@ export default ButtonDemo;`;
 
   const ButtonDemo = () => {
     return (
-      <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+      <CodeViewerContainer>
         <Custom3DButton customColor="#f87171" customBgcolor="#450a0a">
           Red Button
         </Custom3DButton>
@@ -52,7 +52,7 @@ export default ButtonDemo;`;
         <Custom3DButton customColor="#facc15" customBgcolor="#422006">
           Yellow Button
         </Custom3DButton>
-      </Box>
+      </CodeViewerContainer>
     );
   };
 

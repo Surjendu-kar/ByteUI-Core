@@ -1,14 +1,14 @@
-import { Box } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 import CodeViewer from "../../CodeViewer/CodeViewer";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LoginIcon from "@mui/icons-material/Login";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { AnimatedIcon1, AnimatedIcon2, BackToTopIcon } from "@byteui/mui-core";
+import { CodeViewerContainer } from "../../Shared/StyledComponents";
 
 const ButtonDemo = () => {
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <CodeViewerContainer>
       <AnimatedIcon1
         bfBgColor="rgb(255, 65, 65)"
         afBgColor="rgb(255, 65, 65)"
@@ -49,7 +49,7 @@ const ButtonDemo = () => {
         content="Delete"
         icon={DeleteIcon}
       />
-    </Box>
+    </CodeViewerContainer>
   );
 };
 

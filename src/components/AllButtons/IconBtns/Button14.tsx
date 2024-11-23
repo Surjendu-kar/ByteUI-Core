@@ -1,12 +1,12 @@
-import { Box } from "@mui/material";
 import CodeViewer from "../../CodeViewer/CodeViewer";
 import { DayLightIcon } from "@byteui/mui-core";
+import { CodeViewerContainer } from "../../Shared/StyledComponents";
 
 const ButtonDemo = () => {
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <CodeViewerContainer>
       <DayLightIcon />
-    </Box>
+    </CodeViewerContainer>
   );
 };
 
@@ -18,7 +18,7 @@ import { DayLightIcon } from "@byteui/mui-core";
 
 const ButtonDemo = () => {
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <Box sx={{ display: "flex", alignItems: "center",flexWrap: "wrap",justifyContent: "center", gap: 2 }}>
       <DayLightIcon />
     </Box>
   );

@@ -13,10 +13,11 @@ import {
   RightTriangleFacebookButton,
   RightTriangleTwitterButton,
 } from "@byteui/mui-core";
+import { CodeViewerContainer } from "../../Shared/StyledComponents";
 
 const ButtonDemo = () => {
   return (
-    <Box sx={{ display: "flex", gap: 4 }}>
+    <CodeViewerContainer>
       {/* first button  */}
       <Stack sx={{ gap: "0.5em" }}>
         <Box sx={{ display: "flex", gap: "0.5em" }}>
@@ -53,7 +54,7 @@ const ButtonDemo = () => {
           <OutlineTwitchButton />
         </Box>
       </Stack>
-    </Box>
+    </CodeViewerContainer>
   );
 };
 
@@ -93,7 +94,7 @@ import {
 
 const ButtonDemo = () => {
   return (
-    <Box sx={{ display: "flex", gap: 4 }}>
+    <Box sx={{ display: "flex", alignItems: "center",flexWrap: "wrap",justifyContent: "center", gap: 2 }}>
       {/* first button  */}
       <Stack sx={{ gap: "0.5em" }}>
         <Box sx={{ display: "flex", gap: "0.5em" }}>

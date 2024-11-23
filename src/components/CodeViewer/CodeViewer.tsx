@@ -1,5 +1,5 @@
 import { useState, FC, ComponentType } from "react";
-import { Box, Paper, IconButton, Button, styled } from "@mui/material";
+import { Box, IconButton, Button, styled, Stack } from "@mui/material";
 import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
 import CheckIcon from "@mui/icons-material/Check";
 
@@ -8,7 +8,7 @@ const DemoSection = styled(Box)(({ theme }) => ({
   border: "1px solid rgba(255, 255, 255, 0.1)",
   display: "flex",
   justifyContent: "center",
-  bgcolor: "#1f1f21",
+  background: "#1f1f21",
   borderTopLeftRadius: 5,
   borderTopRightRadius: 5,
   [theme.breakpoints.down("sm")]: {},
@@ -24,12 +24,14 @@ const CodeSection = styled(Box)(({ theme }) => ({
   fontSize: "0.875rem",
   color: "#cdd6f4",
   maxHeight: "300px",
+  scrollbarWidth: "thin",
+  scrollbarColor: "rgba(255, 255, 255, 0.1) transparent",
   overflow: "auto",
+
   "&:hover": {
     border: "1px solid #3b82f680",
   },
-  scrollbarWidth: "thin",
-  scrollbarColor: "rgba(255, 255, 255, 0.1) transparent",
+
   "&::-webkit-scrollbar": {
     width: "6px",
     height: "6px",
@@ -92,7 +94,7 @@ const CodeViewer: FC<CodeViewerProps> = ({
   };
 
   return (
-    <Paper
+    <Stack
       sx={{
         maxWidth: 950,
         mx: "auto",
@@ -152,7 +154,7 @@ const CodeViewer: FC<CodeViewerProps> = ({
           </pre>
         </CodeSection>
       </Box>
-    </Paper>
+    </Stack>
   );
 };
 

@@ -7,10 +7,11 @@ import {
   PayButton,
   SavingSlideButton,
 } from "@byteui/mui-core";
+import { CodeViewerContainer } from "../../Shared/StyledComponents";
 
 const ButtonDemo = () => {
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <CodeViewerContainer>
       <CircleSlideButton disableRipple>Slide</CircleSlideButton>
 
       <LetterAnimatedButton>
@@ -33,7 +34,7 @@ const ButtonDemo = () => {
       </SavingSlideButton>
 
       <PayButton>Pay</PayButton>
-    </Box>
+    </CodeViewerContainer>
   );
 };
 
