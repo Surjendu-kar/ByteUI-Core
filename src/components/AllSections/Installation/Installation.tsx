@@ -15,10 +15,8 @@ const Installation = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [copied, setCopied] = useState(false);
 
-  const npmCommand =
-    "npm i @byteui/mui-core @mui/material @emotion/react @emotion/styled";
-  const yarnCommand =
-    "yarn add @byteui/mui-core @mui/material @emotion/react @emotion/styled";
+  const npmCommand = "npm i @byteui/mui-core";
+  const yarnCommand = "yarn add @byteui/mui-core";
 
   const handleTabChange = (_: React.SyntheticEvent, newValue: number) => {
     setActiveTab(newValue);
