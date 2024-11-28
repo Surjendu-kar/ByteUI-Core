@@ -7,9 +7,16 @@ import {
   Typography,
   Paper,
   Stack,
+  styled,
 } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import CheckIcon from "@mui/icons-material/Check";
+
+const Container = styled(Stack)(({ theme }) => ({
+  width: "50%",
+  margin: "1rem 0",
+  [theme.breakpoints.down("sm")]: { width: "95%" },
+}));
 
 const Installation = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -31,14 +38,7 @@ const Installation = () => {
 
   return (
     <Stack sx={{ width: "100%", alignItems: "center" }}>
-      <Stack
-        sx={{
-          width: "70%",
-          margin: "0 auto",
-          alignItems: "flex-start",
-          padding: "1rem 0.5rem 4rem",
-        }}
-      >
+      <Container>
         <Paper
           sx={{
             bgcolor: "rgba(0, 0, 0, 0.87)",
@@ -129,7 +129,7 @@ const Installation = () => {
             </IconButton>
           </Box>
         </Paper>
-      </Stack>
+      </Container>
     </Stack>
   );
 };

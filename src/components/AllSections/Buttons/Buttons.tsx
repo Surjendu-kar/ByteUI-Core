@@ -24,9 +24,7 @@ const MainContainer = styled(Stack)(({ theme }) => ({
 
 const Container = styled(Stack)(({ theme }) => ({
   width: "70%",
-  margin: "0 auto",
-  alignItems: "flex-start",
-  padding: "1rem 0.5rem 4rem",
+  margin: "1rem 0",
   gap: theme.spacing(10),
 
   [theme.breakpoints.down("lg")]: {},
@@ -65,7 +63,7 @@ const Description = styled(Typography)(({ theme }) => ({
 
 const Item = styled(Typography)(({ theme }) => ({
   fontSize: "15px",
- 
+
   [theme.breakpoints.down("sm")]: { fontSize: "12px" },
 }));
 
