@@ -1,25 +1,25 @@
+import { ValoLoader } from "@byteui/mui-core";
 import CodeViewer from "../CodeViewer/CodeViewer";
 import { CodeViewerContainer } from "../Shared/StyledComponents";
-import { LinePulseLoader } from "@byteui/mui-core";
 
 const LoaderDemo = () => (
   <CodeViewerContainer isLoader>
-    <LinePulseLoader />
-    <LinePulseLoader color="#00ff00" width="60px" height="50px" strokeWidth={3}/>
+    <ValoLoader size="50px" />
+    <ValoLoader color="#0000ff" size="50px" speed="0.8s" />
   </CodeViewerContainer>
 );
 
-const Loader5 = () => {
-  const shortCode = `<LinePulseLoader />
-<LinePulseLoader color="#00ff00" width="60px" height="50px" strokeWidth={3}/>`;
+const Loader6 = () => {
+  const shortCode = `<ValoLoader size="50px" />
+<ValoLoader color="#0000ff" size="50px" speed="0.8s" />`;
 
   const fullCode = `import { Box } from "@mui/material";
-import { LinePulseLoader } from "@byteui/mui-core";
+import { ValoLoader } from "@byteui/mui-core";
 
 const LoaderDemo = () => (
   <Box sx={{ display: "flex", gap: 10, alignItems: "center" }}>
-    <LinePulseLoader />
-    <LinePulseLoader color="#00ff00" width="60px" height="50px" strokeWidth={3}/>
+    <ValoLoader size="50px" />
+    <ValoLoader color="#0000ff" size="50px" speed="0.8s" />
   </Box>
 );
 
@@ -30,4 +30,4 @@ export default LoaderDemo;`;
   );
 };
 
-export default Loader5;
+export default Loader6;

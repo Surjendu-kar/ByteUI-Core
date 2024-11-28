@@ -170,10 +170,10 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
-"@byteui/mui-core@^1.0.35":
-  version "1.0.35"
-  resolved "https://registry.yarnpkg.com/@byteui/mui-core/-/mui-core-1.0.35.tgz#d544797f35b99f600afddccd4567ab2914c97505"
-  integrity sha512-wlL0YfrvlcW1jSeVIq3tEkoqziy0hTpCIcQkcCEKL8sNrCwkm+IOraEFVlLpHsVT8NWsYaouwLxjwEgKS2bpBg==
+"@byteui/mui-core@^1.0.36":
+  version "1.0.36"
+  resolved "https://registry.yarnpkg.com/@byteui/mui-core/-/mui-core-1.0.36.tgz#cb2eb4aa0050017c667675197ff2acc29f376908"
+  integrity sha512-k+VkAYBXKnXZJoqsMT0TCbY/0/46xbiuRDSw/NlFXNXdQHH1kJ5EbcI5GN4JJuLY4RMz4XWk8SQxBqeV2oFw9Q==
   dependencies:
     "@mui/icons-material" "^6.1.7"
 

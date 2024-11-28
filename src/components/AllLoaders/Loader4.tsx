@@ -6,12 +6,18 @@ const LoaderDemo = () => (
   <CodeViewerContainer isLoader>
     <CircleSpinnerLoader />
     <BorderSpinner />
+
+    <CircleSpinnerLoader color1="orange" color2="white" color3="#00ff00" />
+    <BorderSpinner size="4.5rem" borderWidth={2} color="#00ff00" speed="1s" />
   </CodeViewerContainer>
 );
 
 const Loader4 = () => {
   const shortCode = `<CircleSpinnerLoader />
-<BorderSpinner />`;
+<BorderSpinner />
+
+<CircleSpinnerLoader color1="orange" color2="white" color3="#00ff00" />
+<BorderSpinner size="4.5rem" borderWidth={2} color="#00ff00" speed="1s" />`;
 
   const fullCode = `import { Box } from "@mui/material";
 import { BorderSpinner, CircleSpinnerLoader } from "@byteui/mui-core";
@@ -21,8 +27,8 @@ const LoaderDemo = () => (
     <CircleSpinnerLoader />
     <BorderSpinner />
 
-    {/* <CircleSpinnerLoader color1="#F44336" color2="#FFC107" color3="#8bc34a" />
-    <BorderSpinner size="5rem" borderWidth={7} color="#2596be" speed="2s" /> */}
+    <CircleSpinnerLoader color1="orange" color2="white" color3="#00ff00" />
+    <BorderSpinner size="4.5rem" borderWidth={2} color="#00ff00" speed="1s" />
   </Box>
 );
 

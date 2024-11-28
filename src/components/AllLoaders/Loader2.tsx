@@ -7,13 +7,16 @@ const LoaderDemo = () => (
     <ThreeBodyLoader />
     <ShadowLoader />
     <NewtonsCradle />
+    <NewtonsCradle color="white" size="40px" speed="1.5s" />
   </CodeViewerContainer>
 );
 
 const Loaders2 = () => {
   const shortCode = `<ThreeBodyLoader />
 <ShadowLoader />
-<NewtonsCradle />`;
+<NewtonsCradle />
+
+<NewtonsCradle color="white" size="40px" speed="1.5s" />`;
 
   const fullCode = `import { Box } from "@mui/material";
 import { ShadowLoader, ThreeBodyLoader, NewtonsCradle } from "@byteui/mui-core";
@@ -24,7 +27,7 @@ const LoaderDemo = () => (
     <ShadowLoader />
     <NewtonsCradle />
 
-    {/* <NewtonsCradle color="#474554" size="40px" speed="1.5s" /> */}
+    <NewtonsCradle color="white" size="40px" speed="1.5s" />
   </Box>
 );
 
