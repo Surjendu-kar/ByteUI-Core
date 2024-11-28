@@ -1,6 +1,9 @@
 import { Box, Stack, styled, Typography } from "@mui/material";
-import Loaders1 from "../../AllLoaders/Loaders1";
-import Loaders2 from "../../AllLoaders/Loaders2";
+import Loader1 from "../../AllLoaders/Loader1";
+import Loader2 from "../../AllLoaders/Loader2";
+import Loader3 from "../../AllLoaders/Loader3";
+import Loader4 from "../../AllLoaders/Loader4";
+import Loader5 from "../../AllLoaders/Loader5";
 const MainContainer = styled(Stack)(({ theme }) => ({
   width: "100%",
   alignItems: "center",
@@ -55,8 +58,11 @@ function Loaders() {
           </Box>
 
           <Stack sx={{ gap: 4 }}>
-            <Loaders1 />
-            <Loaders2 />
+            <Loader1 />
+            <Loader2 />
+            <Loader3 />
+            <Loader4 />
+            <Loader5 />
           </Stack>
         </Stack>
       </Container>

@@ -10,7 +10,7 @@ const LoaderDemo = () => (
   </CodeViewerContainer>
 );
 
-const Loaders1 = () => {
+const Loader1 = () => {
   const shortCode = `<BarsLoader />
 <SimpleLoader />
 <MatrixLoader />`;
@@ -39,4 +39,4 @@ export default LoaderDemo;`;
   );
 };
 
-export default Loaders1;
+export default Loader1;

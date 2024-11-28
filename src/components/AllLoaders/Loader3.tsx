@@ -1,25 +1,25 @@
+import { JumpLoader, TruckLoader } from "@byteui/mui-core";
 import CodeViewer from "../CodeViewer/CodeViewer";
-import { ShadowLoader, ThreeBodyLoader } from "@byteui/mui-core";
 import { CodeViewerContainer } from "../Shared/StyledComponents";
 
 const LoaderDemo = () => (
   <CodeViewerContainer isLoader>
-    <ThreeBodyLoader />
-    <ShadowLoader />
+    <JumpLoader />
+    <TruckLoader />
   </CodeViewerContainer>
 );
 
-const Loaders2 = () => {
-  const shortCode = `<ThreeBodyLoader />
-<ShadowLoader />`;
+const Loader3 = () => {
+  const shortCode = `<JumpLoader />
+<TruckLoader />`;
 
   const fullCode = `import { Box } from "@mui/material";
-import { ShadowLoader, ThreeBodyLoader } from "@byteui/mui-core";
+import { JumpLoader, TruckLoader } from "@byteui/mui-core";
 
 const LoaderDemo = () => (
   <Box sx={{ display: "flex", gap: 10, alignItems: "center" }}>
-    <ThreeBodyLoader />
-    <ShadowLoader />
+    <JumpLoader />
+    <TruckLoader />
   </Box>
 );
 
@@ -30,4 +30,4 @@ export default LoaderDemo;`;
   );
 };
 
-export default Loaders2;
+export default Loader3;
