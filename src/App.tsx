@@ -31,29 +31,31 @@ const ContentWrapper = styled(Box)(({ theme }) => ({
   },
 }));
 
+// Component for pages with full layout
+const PagesWithLayout = () => (
+  <>
+    <Header />
+    <Sidebar />
+    <MainWrapper>
+      <ContentWrapper>
+        <Routes>
+          <Route element={<Installation />} path={Path.Installation} />
+          <Route element={<Buttons />} path={Path.Buttons} />
+          <Route element={<Loaders />} path={Path.Loaders} />
+        </Routes>
+        <Footer />
+      </ContentWrapper>
+    </MainWrapper>
+  </>
+);
+
 function App() {
   return (
     <Layout>
-      {/* App Bar */}
-      <Header />
-
-      {/* Sidebar */}
-      <Sidebar />
-
-      {/* Main Content */}
-      <MainWrapper>
-        <ContentWrapper>
-          <Routes>
-            <Route element={<Home />} path={Path.Home} />
-            <Route element={<Installation />} path={Path.Installation} />
-            <Route element={<Buttons />} path={Path.Buttons} />
-            <Route element={<Loaders />} path={Path.Loaders} />
-          </Routes>
-
-          {/* Footer */}
-          <Footer />
-        </ContentWrapper>
-      </MainWrapper>
+      <Routes>
+        <Route element={<Home />} path={Path.Home} />
+        <Route element={<PagesWithLayout />} path="/*" />
+      </Routes>
     </Layout>
   );
 }
