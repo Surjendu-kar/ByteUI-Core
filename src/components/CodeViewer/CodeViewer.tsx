@@ -1,64 +1,41 @@
-import { useState, FC, ComponentType } from "react";
-import { Box, IconButton, Button, styled, Stack } from "@mui/material";
+import { useState, FC, ComponentType, useEffect } from "react";
+import { Box, IconButton, Button, Stack, styled } from "@mui/material";
 import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
 import CheckIcon from "@mui/icons-material/Check";
+import Prism from "prismjs";
+import "prismjs/themes/prism-tomorrow.css";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-tsx";
 
-const DemoSection = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(1.25),
+const DemoSection = styled(Box)(() => ({
+  padding: "10px",
   border: "1px solid rgba(255, 255, 255, 0.1)",
   display: "flex",
   justifyContent: "center",
-  background: "#1f1f21",
+  backgroundColor: "#1f1f21",
   borderTopLeftRadius: 5,
   borderTopRightRadius: 5,
-  [theme.breakpoints.down("sm")]: {},
 }));
 
-const CodeSection = styled(Box)(({ theme }) => ({
-  position: "relative",
-  padding: theme.spacing(1.5),
+const CodeContainer = styled(Box)(() => ({
+  backgroundColor: "#101011",
+  borderRadius: 2,
+}));
+
+const ControlsSection = styled(Box)(() => ({
+  display: "flex",
+  justifyContent: "right",
+  alignItems: "center",
+  padding: "8px",
+  gap: "8px",
   border: "1px solid rgba(255, 255, 255, 0.1)",
-  borderBottomLeftRadius: 5,
-  borderBottomRightRadius: 5,
-  fontFamily: "monospace",
-  fontSize: "0.875rem",
-  color: "#cdd6f4",
-  maxHeight: "300px",
-  scrollbarWidth: "thin",
-  scrollbarColor: "rgba(255, 255, 255, 0.1) transparent",
-  overflow: "auto",
-
-  "&:hover": {
-    border: "1px solid #3b82f680",
-  },
-
-  "&::-webkit-scrollbar": {
-    width: "6px",
-    height: "6px",
-  },
-  "&::-webkit-scrollbar-track": {
-    background: "transparent",
-  },
-  "&::-webkit-scrollbar-corner": {
-    background: "transparent",
-  },
-  "&::-webkit-scrollbar-thumb": {
-    background: "rgba(255, 255, 255, 0.1)",
-    borderRadius: "3px",
-    "&:hover": {
-      background: "rgba(255, 255, 255, 0.2)",
-    },
-  },
-
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "0.8rem",
-  },
 }));
 
-const ExpandButton = styled(Button)(({ theme }) => ({
+const ExpandButton = styled(Button)(() => ({
   backgroundColor: "#1a1b26",
   color: "#89b4fa",
-  padding: "2px 15px",
+  padding: "2px 16px",
   fontSize: "12px",
   textTransform: "none",
   border: "1px solid #2a2b36",
@@ -69,23 +46,62 @@ const ExpandButton = styled(Button)(({ theme }) => ({
     borderColor: "#89b4fa",
     boxShadow: "0 0 15px rgba(137, 180, 250, 0.2)",
   },
+  "@media (max-width: 600px)": {
+    fontSize: "10px",
+  },
+}));
 
-  [theme.breakpoints.down("sm")]: { fontSize: "10px", padding: "2px 13px" },
+const CodeContent = styled(Box)(() => ({
+  position: "relative",
+  border: "1px solid rgba(255, 255, 255, 0.1)",
+  borderBottomLeftRadius: 5,
+  borderBottomRightRadius: 5,
+  fontFamily: "monospace",
+  fontSize: "0.875rem",
+  color: "#cdd6f4",
+  maxHeight: "300px",
+  overflow: "auto",
+  "&:hover": {
+    border: "1px solid #3b82f680",
+  },
+  "&::-webkit-scrollbar": {
+    width: "6px",
+    height: "6px",
+  },
+  "&::-webkit-scrollbar-track": {
+    background: "transparent",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    background: "rgba(255, 255, 255, 0.1)",
+    borderRadius: "3px",
+    "&:hover": {
+      background: "rgba(255, 255, 255, 0.2)",
+    },
+  },
+  "@media (max-width: 600px)": {
+    fontSize: "0.8rem",
+  },
 }));
 
 interface CodeViewerProps {
   shortCode: string;
   fullCode: string;
   demo: ComponentType;
+  language?: string;
 }
 
 const CodeViewer: FC<CodeViewerProps> = ({
   shortCode,
   fullCode,
   demo: Demo,
+  language = "tsx",
 }) => {
   const [copied, setCopied] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [isExpanded, shortCode, fullCode]);
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(isExpanded ? fullCode : shortCode);
@@ -94,35 +110,19 @@ const CodeViewer: FC<CodeViewerProps> = ({
   };
 
   return (
-    <Stack
-      sx={{
-        maxWidth: 950,
-        mx: "auto",
-        width: "100%",
-      }}
-    >
-      {/* Demo Section */}
+    <Stack sx={{ maxWidth: 950, mx: "auto", width: "100%" }}>
       {Demo && (
         <DemoSection>
           <Demo />
         </DemoSection>
       )}
 
-      {/* Expand & Copy Section */}
-      <Box sx={{ bgcolor: "#101011", borderRadius: 2 }}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "right",
-            alignItems: "center",
-            p: 1,
-            gap: 1,
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-          }}
-        >
+      <CodeContainer>
+        <ControlsSection>
           <ExpandButton onClick={() => setIsExpanded(!isExpanded)}>
             {isExpanded ? "Collapse code" : "Expand code"}
           </ExpandButton>
+
           <IconButton
             size="small"
             onClick={handleCopy}
@@ -132,28 +132,21 @@ const CodeViewer: FC<CodeViewerProps> = ({
             }}
           >
             {copied ? (
-              <CheckIcon
-                sx={{
-                  fontSize: { xs: 14, sm: 16 },
-                }}
-              />
+              <CheckIcon sx={{ fontSize: { xs: 14, sm: 16 } }} />
             ) : (
-              <ContentCopyOutlinedIcon
-                sx={{
-                  fontSize: { xs: 14, sm: 16 },
-                }}
-              />
+              <ContentCopyOutlinedIcon sx={{ fontSize: { xs: 14, sm: 16 } }} />
             )}
           </IconButton>
-        </Box>
+        </ControlsSection>
 
-        {/* Code Content */}
-        <CodeSection>
+        <CodeContent>
           <pre style={{ margin: 0 }}>
-            <code>{isExpanded ? fullCode : shortCode}</code>
+            <code className={`language-${language}`}>
+              {isExpanded ? fullCode : shortCode}
+            </code>
           </pre>
-        </CodeSection>
-      </Box>
+        </CodeContent>
+      </CodeContainer>
     </Stack>
   );
 };
