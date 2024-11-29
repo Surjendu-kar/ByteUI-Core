@@ -62,7 +62,7 @@ const CodeContent = styled(Box)(() => ({
   maxHeight: "300px",
   overflow: "auto",
   "&:hover": {
-    border: "1px solid #3b82f680",
+    border: "1px solid #ffc53b75",
   },
   "&::-webkit-scrollbar": {
     width: "6px",
