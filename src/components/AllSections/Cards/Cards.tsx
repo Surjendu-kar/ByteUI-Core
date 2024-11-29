@@ -1,5 +1,6 @@
 import { Box, Stack, styled, Typography } from "@mui/material";
 import Card1 from "../../AllCards/Card1";
+import Card2 from "../../AllCards/Card2";
 
 const MainContainer = styled(Stack)(({ theme }) => ({
   width: "100%",
@@ -43,6 +44,7 @@ function Cards() {
 
           <Stack sx={{ gap: 4 }}>
             <Card1 />
+            <Card2 />
           </Stack>
         </Stack>
       </Container>
