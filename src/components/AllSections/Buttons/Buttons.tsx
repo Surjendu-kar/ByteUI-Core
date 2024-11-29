@@ -35,7 +35,7 @@ const Container = styled(Stack)(({ theme }) => ({
 const MainTitle = styled(Typography)(({ theme }) => ({
   fontSize: "2.5rem",
   fontWeight: 700,
-  color: "#fff",
+  color: theme.palette.primary.main,
   marginBottom: theme.spacing(2),
   textAlign: "left",
 
@@ -48,7 +48,7 @@ const MainTitle = styled(Typography)(({ theme }) => ({
 const Title = styled(Typography)(({ theme }) => ({
   fontSize: "2rem",
   fontWeight: 700,
-  color: "#fff",
+  color: theme.palette.primary.main,
   marginBottom: theme.spacing(2),
   textAlign: "left",
   [theme.breakpoints.down("sm")]: {},
@@ -56,13 +56,14 @@ const Title = styled(Typography)(({ theme }) => ({
 
 const Description = styled(Typography)(({ theme }) => ({
   fontSize: "16px",
-  color: "rgba(255, 255, 255, 0.8)",
+  color: theme.palette.text.secondary,
   marginBottom: theme.spacing(1),
   [theme.breakpoints.down("sm")]: { fontSize: "14px" },
 }));
 
 const Item = styled(Typography)(({ theme }) => ({
   fontSize: "15px",
+  color: theme.palette.text.secondary,
 
   [theme.breakpoints.down("sm")]: { fontSize: "12px" },
 }));

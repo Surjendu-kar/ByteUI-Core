@@ -21,7 +21,14 @@ function Home() {
       <Button
         variant="contained"
         onClick={() => navigate(Path.Installation)}
-        sx={{ textTransform: "capitalize" }}
+        sx={{
+          textTransform: "capitalize",
+          background: "#296adf",
+          color: "white",
+          "&:hover": {
+            background: "#194aa2",
+          },
+        }}
       >
         Get started
       </Button>
