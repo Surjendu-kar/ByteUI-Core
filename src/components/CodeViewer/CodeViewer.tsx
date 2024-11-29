@@ -72,10 +72,10 @@ const CodeContent = styled(Box)(() => ({
     background: "transparent",
   },
   "&::-webkit-scrollbar-thumb": {
-    background: "rgba(255, 255, 255, 0.1)",
     borderRadius: "3px",
+    border: "1px solid #f8c555",
     "&:hover": {
-      background: "rgba(255, 255, 255, 0.2)",
+      border: "2px solid #ffde95",
     },
   },
   "@media (max-width: 600px)": {
