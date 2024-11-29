@@ -20,17 +20,17 @@ const CardDemo = () => (
 );
 
 const Card2 = () => {
-  const shortCode = `  <ProjectCard
-      title="Project Name"
-      description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-      image={<ImageIcon />}
-      onDemoClick={() =>
-        window.open("https://byteui-core.vercel.app/", "_blank")
-      }
-      onSourceClick={() =>
-        window.open("https://github.com/Surjendu-kar/ByteUI-Core", "_blank")
-      }
-    />`;
+  const shortCode = `<ProjectCard
+  title="Project Name"
+  description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  image={<ImageIcon />}
+  onDemoClick={() =>
+    window.open("https://byteui-core.vercel.app/", "_blank")
+  }
+  onSourceClick={() =>
+    window.open("https://github.com/Surjendu-kar/ByteUI-Core", "_blank")
+  }
+/>`;
 
   const fullCode = `import { Box } from "@mui/material";
 import { ProjectCard } from "@byteui/mui-core";
