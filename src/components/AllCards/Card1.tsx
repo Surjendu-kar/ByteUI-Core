@@ -3,7 +3,7 @@ import { CodeViewerContainer } from "../Shared/StyledComponents";
 import ImageIcon from "@mui/icons-material/Image";
 import { FlipCard } from "@byteui/mui-core";
 
-const LoaderDemo = () => (
+const CardDemo = () => (
   <CodeViewerContainer isCard>
     <FlipCard title="Title" description="Description" image={<ImageIcon />} />
   </CodeViewerContainer>
@@ -16,7 +16,7 @@ const Card1 = () => {
 import { FlipCard } from "@byteui/mui-core";
 import ImageIcon from "@mui/icons-material/Image";
 
-const LoaderDemo = () => (
+const CardDemo = () => (
   <Box
     sx={{
       display: "flex",
@@ -28,10 +28,10 @@ const LoaderDemo = () => (
   </Box>
 );
 
-export default LoaderDemo;`;
+export default CardDemo;`;
 
   return (
-    <CodeViewer shortCode={shortCode} fullCode={fullCode} demo={LoaderDemo} />
+    <CodeViewer shortCode={shortCode} fullCode={fullCode} demo={CardDemo} />
   );
 };
 
