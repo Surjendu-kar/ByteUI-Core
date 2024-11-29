@@ -9,6 +9,7 @@ import { Box, styled } from "@mui/material";
 import Layout from "./layout";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/AllSections/Home/Home";
+import Cards from "./components/AllSections/Cards/Cards";
 
 const MainWrapper = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -42,6 +43,7 @@ const PagesWithLayout = () => (
           <Route element={<Installation />} path={Path.Installation} />
           <Route element={<Buttons />} path={Path.Buttons} />
           <Route element={<Loaders />} path={Path.Loaders} />
+          <Route element={<Cards />} path={Path.Cards} />
         </Routes>
         <Footer />
       </ContentWrapper>

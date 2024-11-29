@@ -34,7 +34,7 @@ const ControlsSection = styled(Box)(() => ({
 
 const ExpandButton = styled(Button)(() => ({
   backgroundColor: "#1a1b26",
-  color: "#89b4fa",
+  color: "#f8c555",
   padding: "2px 16px",
   fontSize: "12px",
   textTransform: "none",
@@ -43,7 +43,7 @@ const ExpandButton = styled(Button)(() => ({
   boxShadow: "0 0 10px rgba(137, 180, 250, 0.1)",
   "&:hover": {
     backgroundColor: "#2a2b36",
-    borderColor: "#89b4fa",
+    borderColor: "#ffde9569",
     boxShadow: "0 0 15px rgba(137, 180, 250, 0.2)",
   },
   "@media (max-width: 600px)": {
@@ -127,7 +127,7 @@ const CodeViewer: FC<CodeViewerProps> = ({
             size="small"
             onClick={handleCopy}
             sx={{
-              color: copied ? "#a6e3a1" : "rgba(255, 255, 255, 0.7)",
+              color: copied ? "#a6e3a1" : "#f8c555",
               "&:hover": { bgcolor: "rgba(255, 255, 255, 0.1)" },
             }}
           >

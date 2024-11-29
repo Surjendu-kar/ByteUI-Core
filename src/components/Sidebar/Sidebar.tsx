@@ -30,7 +30,7 @@ export default function Sidebar(props: Props) {
       <Toolbar />
       <Divider />
       <List>
-        {["Installation", "Button", "Loader"].map((text) => (
+        {["Installation", "Button", "Loader", "Card"].map((text) => (
           <Link to={text}>
             <ListItem key={text} disablePadding>
               <ListItemButton>
