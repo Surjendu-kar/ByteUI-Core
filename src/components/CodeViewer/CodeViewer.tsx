@@ -7,6 +7,7 @@ import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/components/prism-typescript";
 import "prismjs/components/prism-jsx";
 import "prismjs/components/prism-tsx";
+import theme from "../../theme";
 
 const DemoSection = styled(Box)(() => ({
   padding: "10px",
@@ -34,16 +35,16 @@ const ControlsSection = styled(Box)(() => ({
 
 const ExpandButton = styled(Button)(() => ({
   backgroundColor: "#1a1b26",
-  color: "#f8c555",
+  color: theme.palette.primary.main,
   padding: "2px 16px",
   fontSize: "12px",
   textTransform: "none",
-  border: "1px solid #2a2b36",
+  border: `1px solid ${theme.palette.secondary.main}`,
   borderRadius: "15px",
   boxShadow: "0 0 10px rgba(137, 180, 250, 0.1)",
   "&:hover": {
-    backgroundColor: "#2a2b36",
-    borderColor: "#ffde9569",
+    backgroundColor: theme.palette.secondary.main,
+    borderColor: theme.palette.primary.light,
     boxShadow: "0 0 15px rgba(137, 180, 250, 0.2)",
   },
   "@media (max-width: 600px)": {
@@ -62,7 +63,7 @@ const CodeContent = styled(Box)(() => ({
   maxHeight: "300px",
   overflow: "auto",
   "&:hover": {
-    border: "1px solid #ffc53b75",
+    border: `1px solid ${theme.palette.primary.light}`,
   },
   "&::-webkit-scrollbar": {
     width: "6px",
@@ -73,9 +74,9 @@ const CodeContent = styled(Box)(() => ({
   },
   "&::-webkit-scrollbar-thumb": {
     borderRadius: "3px",
-    border: "1px solid #f8c555",
+    border: `1px solid ${theme.palette.primary.light}`,
     "&:hover": {
-      border: "2px solid #ffde95",
+      border: `1px solid ${theme.palette.primary.main}`,
     },
   },
   "@media (max-width: 600px)": {

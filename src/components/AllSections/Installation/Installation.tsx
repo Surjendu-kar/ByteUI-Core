@@ -11,11 +11,39 @@ import {
 } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import CheckIcon from "@mui/icons-material/Check";
+import theme from "../../../theme";
 
 const Container = styled(Stack)(({ theme }) => ({
   width: "50%",
   margin: "1rem 0",
   [theme.breakpoints.down("sm")]: { width: "95%" },
+}));
+
+const CustomTab = styled(Tab)(() => ({
+  color: "rgba(255, 255, 255, 0.5)",
+  minHeight: "40px",
+  padding: "8px 12px",
+  textTransform: "none",
+  fontSize: "14px",
+  fontWeight: "normal",
+  minWidth: "auto",
+  position: "relative",
+  "&:hover": {
+    background: "#3d47514d",
+    color: "#ffffffc9",
+  },
+  "&.Mui-selected": {
+    color: "white",
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      width: "100%",
+      height: "2px",
+      backgroundColor: "white",
+    },
+  },
 }));
 
 const Installation = () => {
@@ -60,37 +88,8 @@ const Installation = () => {
               },
             }}
           >
-            <Tab
-              label="npm"
-              sx={{
-                color: activeTab === 0 ? "white" : "rgba(255, 255, 255, 0.5)",
-                minHeight: "40px",
-                textTransform: "none",
-                fontSize: "14px",
-                fontWeight: "normal",
-                minWidth: "auto",
-                "&:hover": {
-                  bgcolor: "#3d47514d",
-                  color: "white",
-                },
-              }}
-            />
-            <Tab
-              label="yarn"
-              sx={{
-                color: activeTab === 1 ? "white" : "rgba(255, 255, 255, 0.5)",
-                minHeight: "40px",
-                padding: "8px 12px",
-                textTransform: "none",
-                fontSize: "14px",
-                fontWeight: "normal",
-                minWidth: "auto",
-                "&:hover": {
-                  bgcolor: "#3d47514d",
-                  color: "white",
-                },
-              }}
-            />
+            <CustomTab label="npm" />
+            <CustomTab label="yarn" />
           </Tabs>
           <Box
             sx={{
@@ -105,7 +104,7 @@ const Installation = () => {
               sx={{
                 fontFamily: "monospace",
                 fontSize: "14px",
-                color: "rgba(255, 255, 255, 0.9)",
+                color: theme.palette.text.secondary,
               }}
             >
               {activeTab === 0 ? npmCommand : yarnCommand}
