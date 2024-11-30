@@ -73,7 +73,7 @@ import { AboutCard } from "@byteui/mui-core";
 const CardDemo = () => (
   <CodeViewerContainer isCard>
     <AboutCard
-      bgColor="#000000"
+      bgColor="#0e0e0e"
       textColor="white"
       image={<ImageIcon sx={{ fontSize: "5rem" }} />}
       heading="about me"
@@ -94,7 +94,7 @@ const CardDemo = () => (
       buttonHoverBgColor="red"
       buttonColor="#000000"
       buttonHoverColor="white"
-      buttonLink="/resume.pdf"
+      buttonLink="#"
     />
   </CodeViewerContainer>
 );
