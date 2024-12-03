@@ -9,8 +9,8 @@ const CardDemo = () => (
       name="JohnDoe"
       title="Product Designer"
       icon={<CameraIcon />}
-      width="240px"
-      height="300px"
+      width="270px"
+      height="350px"
     />
   </CodeViewerContainer>
 );
@@ -20,8 +20,8 @@ const Card6 = () => {
   name="JohnDoe"
   title="Product Designer"
   icon={<CameraIcon />}
-  width="240px"
-  height="300px"
+  width="270px"
+  height="350px"
 />`;
 
   const fullCode = `import { Box } from "@mui/material";
@@ -40,8 +40,8 @@ const CardDemo = () => (
       name="JohnDoe"
       title="Product Designer"
       icon={<CameraIcon />}
-      width="240px"
-      height="300px"
+      width="270px"
+      height="350px"
     />
   </Box>
 );
