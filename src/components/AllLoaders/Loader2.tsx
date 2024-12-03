@@ -15,7 +15,6 @@ const Loaders2 = () => {
   const shortCode = `<ThreeBodyLoader />
 <ShadowLoader />
 <NewtonsCradle />
-
 <NewtonsCradle color="white" size="40px" speed="1.5s" />`;
 
   const fullCode = `import { Box } from "@mui/material";
