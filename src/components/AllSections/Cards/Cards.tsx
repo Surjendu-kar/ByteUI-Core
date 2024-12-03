@@ -6,6 +6,7 @@ import Card4 from "../../AllCards/Card4";
 import Card5 from "../../AllCards/Card5";
 import Card6 from "../../AllCards/Card6";
 import Card7 from "../../AllCards/Card7";
+import Card8 from "../../AllCards/Card8";
 
 const MainContainer = styled(Stack)(({ theme }) => ({
   width: "100%",
@@ -55,6 +56,7 @@ function Cards() {
             <Card5 />
             <Card6 />
             <Card7 />
+            <Card8 />
           </Stack>
         </Stack>
       </Container>
