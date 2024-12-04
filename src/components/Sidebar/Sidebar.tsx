@@ -35,7 +35,7 @@ export default function Sidebar(props: Props) {
 
   const drawer = (
     <Box>
-      <Toolbar />
+      <Toolbar sx={{ height: { xs: 64, sm: 70 } }} />
       <Divider />
       <List>
         {navItems.map(({ display, path }) => {
