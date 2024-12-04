@@ -1,15 +1,20 @@
 import { Box, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useSearchParams } from "react-router-dom";
-import { Params } from "../../enums";
-import image from "../../assets/logo-2.png";
+import { useSearchParams, useNavigate } from "react-router-dom";
+import { Params, Path } from "../../enums";
+import image from "../../assets/logo-3.png";
 
 function Header() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     searchParams.set(Params.SidebarOpen, "true");
     setSearchParams(searchParams);
+  };
+
+  const handleLogoClick = () => {
+    navigate(Path.Home);
   };
 
   return (
@@ -24,7 +29,6 @@ function Header() {
         borderColor: "divider",
         display: "flex",
         alignItems: "center",
-        // px: 20,
         bgcolor: "background.paper",
         zIndex: 1100,
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
@@ -40,7 +44,6 @@ function Header() {
       >
         <MenuIcon />
       </IconButton>
-
       <Box
         sx={{
           width: "100%",
@@ -52,9 +55,11 @@ function Header() {
           component="img"
           src={image}
           alt="Logo"
+          onClick={handleLogoClick}
           sx={{
-            height: { xs: "90px", sm: "110px" },
-            width: { xs: "100px", sm: "120px" },
+            height: { xs: "150px", sm: "200px" },
+            width: { xs: "150px", sm: "200px" },
+            cursor: "pointer",
           }}
         />
       </Box>
