@@ -6,8 +6,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
-import { Link, useSearchParams } from "react-router-dom";
-import { Params } from "../../enums";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { Params, Path } from "../../enums";
 
 const drawerWidth = 200;
 
@@ -19,26 +19,51 @@ export default function Sidebar(props: Props) {
   const { window } = props;
   const [searchParams, setSearchParams] = useSearchParams();
   const isOpen = searchParams.get(Params.SidebarOpen) === "true";
+  const location = useLocation();
 
   const handleDrawerClose = () => {
     searchParams.delete(Params.SidebarOpen);
     setSearchParams(searchParams);
   };
 
+  const navItems = [
+    { display: "Installation", path: Path.Installation },
+    { display: "Button", path: Path.Buttons },
+    { display: "Loader", path: Path.Loaders },
+    { display: "Card", path: Path.Cards },
+  ];
+
   const drawer = (
     <Box>
       <Toolbar />
       <Divider />
       <List>
-        {["Installation", "Button", "Loader", "Card"].map((text) => (
-          <Link to={text}>
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        ))}
+        {navItems.map(({ display, path }) => {
+          const isSelected =
+            location.pathname === `/${path}` ||
+            (location.pathname === "/" && path === Path.Installation);
+
+          return (
+            <Link
+              to={path}
+              key={display}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <ListItem disablePadding>
+                <ListItemButton
+                  sx={{
+                    bgcolor: isSelected ? "action.selected" : "transparent",
+                    "&:hover": {
+                      bgcolor: isSelected ? "action.selected" : "action.hover",
+                    },
+                  }}
+                >
+                  <ListItemText primary={display} />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+          );
+        })}
       </List>
       <Divider />
     </Box>
