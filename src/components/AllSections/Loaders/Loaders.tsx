@@ -5,6 +5,7 @@ import Loader3 from "../../AllLoaders/Loader3";
 import Loader4 from "../../AllLoaders/Loader4";
 import Loader5 from "../../AllLoaders/Loader5";
 import Loader6 from "../../AllLoaders/Loader6";
+import Loader7 from "../../AllLoaders/Loader7";
 
 const MainContainer = styled(Stack)(({ theme }) => ({
   width: "100%",
@@ -92,6 +93,7 @@ function Loaders() {
             <Loader4 />
             <Loader5 />
             <Loader6 />
+            <Loader7 />
           </Stack>
         </Stack>
       </Container>

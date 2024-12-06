@@ -2,7 +2,7 @@ import { Box, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { Params, Path } from "../../enums";
-import image from "../../assets/logo-3.png";
+// import image from "../../assets/logo-3.png";
 
 function Header() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -51,7 +51,7 @@ function Header() {
           justifyContent: "right",
         }}
       >
-        <Box
+        {/* <Box
           component="img"
           src={image}
           alt="Logo"
@@ -61,7 +61,7 @@ function Header() {
             width: { xs: "150px", sm: "200px" },
             cursor: "pointer",
           }}
-        />
+        /> */}
       </Box>
     </Box>
   );

@@ -1,25 +1,22 @@
-import { ValoLoader } from "@byteui/mui-core";
+import { TextLoader } from "@byteui/mui-core";
 import CodeViewer from "../CodeViewer/CodeViewer";
 import { CodeViewerContainer } from "../Shared/StyledComponents";
 
 const LoaderDemo = () => (
   <CodeViewerContainer isLoader>
-    <ValoLoader size="50px" />
-    <ValoLoader color="#0000ff" size="50px" speed="0.8s" />
+    <TextLoader color="white" shadowColor="#000000" speed="1.5s" />
   </CodeViewerContainer>
 );
 
-const Loader6 = () => {
-  const shortCode = `<ValoLoader size="50px" />
-<ValoLoader color="#0000ff" size="50px" speed="0.8s" />`;
+const Loader7 = () => {
+  const shortCode = `<TextLoader color="white" shadowColor="#000000" speed="1.5s" />`;
 
   const fullCode = `import { Box } from "@mui/material";
-import {  ValoLoader } from "@byteui/mui-core";
+import { TextLoader } from "@byteui/mui-core";
 
 const LoaderDemo = () => (
   <Box sx={{ display: "flex", gap: 10, alignItems: "center" }}>
-    <ValoLoader size="50px" />
-    <ValoLoader color="#0000ff" size="50px" speed="0.8s" />
+    <TextLoader color="white" shadowColor="#000000" speed="1.5s" />
   </Box>
 );
 
@@ -30,4 +27,4 @@ export default LoaderDemo;`;
   );
 };
 
-export default Loader6;
+export default Loader7;
