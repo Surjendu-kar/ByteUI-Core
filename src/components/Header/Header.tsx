@@ -1,12 +1,12 @@
 import { Box, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useSearchParams, useNavigate } from "react-router-dom";
-import { Params, Path } from "../../enums";
+import { useSearchParams } from "react-router-dom";
+import { Params } from "../../enums";
 // import image from "../../assets/logo-3.png";
 
 function Header() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     searchParams.set(Params.SidebarOpen, "true");
