@@ -13,9 +13,9 @@ function Header() {
     setSearchParams(searchParams);
   };
 
-  const handleLogoClick = () => {
-    navigate(Path.Home);
-  };
+  // const handleLogoClick = () => {
+  //   navigate(Path.Home);
+  // };
 
   return (
     <Box
