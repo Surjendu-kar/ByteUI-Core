@@ -2,11 +2,6 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   spacing: 10,
-  // typography: {
-  //   // fontFamily: `'Jost', sans-serif`,
-  //   // htmlFontSize: 10,
-  //   // fontSize: 10,
-  // },
   palette: {
     mode: "dark",
     primary: {
@@ -15,8 +10,6 @@ const theme = createTheme({
     },
     secondary: {
       main: "#2a2b36",
-      // light: "#215D72",
-      // dark: "#2D3F59",
     },
     // grey: {
     //   200: "#D9D9D9",

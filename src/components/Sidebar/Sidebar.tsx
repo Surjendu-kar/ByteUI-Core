@@ -8,6 +8,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { Params, Path } from "../../enums";
+import theme from "../../theme";
 
 const drawerWidth = 200;
 
@@ -88,7 +89,7 @@ export default function Sidebar(props: Props) {
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             width: drawerWidth,
-            bgcolor: "background.default",
+            background: theme.palette.background.default,
             borderRight: 1,
             borderColor: "divider",
           },
@@ -104,7 +105,7 @@ export default function Sidebar(props: Props) {
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             width: drawerWidth,
-            bgcolor: "background.default",
+            background: theme.palette.background.default,
             borderRight: 1,
             borderColor: "divider",
           },
