@@ -29,7 +29,7 @@ const Container = styled(Stack)(({ theme }) => ({
 const MainTitle = styled(Typography)(({ theme }) => ({
   fontSize: "2.5rem",
   fontWeight: 700,
-  color: theme.palette.primary.main,
+  color: "#f8c555 !important",
   marginBottom: theme.spacing(2),
   textAlign: "left",
 
