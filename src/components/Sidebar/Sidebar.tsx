@@ -106,6 +106,7 @@ export default function Sidebar(props: Props) {
             boxSizing: "border-box",
             width: drawerWidth,
             background: theme.palette.background.default,
+            color: "white",
             borderRight: 1,
             borderColor: "divider",
           },
