@@ -53,9 +53,16 @@ export default function Sidebar(props: Props) {
               <ListItem disablePadding>
                 <ListItemButton
                   sx={{
-                    bgcolor: isSelected ? "action.selected" : "transparent",
+                    bgcolor: isSelected
+                      ? "rgba(255, 255, 255, 0.08)"
+                      : "transparent",
                     "&:hover": {
-                      bgcolor: isSelected ? "action.selected" : "action.hover",
+                      bgcolor: isSelected
+                        ? "rgba(255, 255, 255, 0.08)"
+                        : "rgba(255, 255, 255, 0.16) !important",
+                    },
+                    "&.MuiListItemButton-root:hover": {
+                      bgcolor: "rgba(255, 255, 255, 0.16)",
                     },
                   }}
                 >
