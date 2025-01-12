@@ -2,6 +2,7 @@ import { Box, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useSearchParams } from "react-router-dom";
 import { Params } from "../../enums";
+import theme from "../../theme";
 // import image from "../../assets/logo-3.png";
 
 function Header() {
@@ -40,6 +41,7 @@ function Header() {
           display: { xs: "flex", sm: "none" },
           position: { xs: "absolute", sm: "static" },
           left: 8,
+          color: theme.palette.text.primary,
         }}
       >
         <MenuIcon />

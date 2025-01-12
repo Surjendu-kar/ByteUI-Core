@@ -6,6 +6,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { Params, Path } from "../../enums";
 import theme from "../../theme";
@@ -36,7 +38,20 @@ export default function Sidebar(props: Props) {
 
   const drawer = (
     <Box>
-      <Toolbar sx={{ height: { xs: 64, sm: 70 } }} />
+      <Box
+        sx={{
+          display: { xs: "flex", sm: "none" },
+          justifyContent: "flex-end",
+          p: 1,
+        }}
+      >
+        <IconButton
+          onClick={handleDrawerClose}
+          sx={{ color: theme.palette.text.primary }}
+        >
+          <CloseIcon />
+        </IconButton>
+      </Box>
       <Divider />
       <List>
         {navItems.map(({ display, path }) => {
@@ -99,6 +114,7 @@ export default function Sidebar(props: Props) {
             background: theme.palette.background.default,
             borderRight: 1,
             borderColor: "divider",
+            color: theme.palette.text.primary,
           },
         }}
       >
