@@ -5,11 +5,13 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { Params, Path } from "../../enums";
 import theme from "../../theme";
+import { useTheme } from "@emotion/react";
 
 const drawerWidth = 200;
 
@@ -22,6 +24,7 @@ export default function Sidebar(props: Props) {
   const [searchParams, setSearchParams] = useSearchParams();
   const isOpen = searchParams.get(Params.SidebarOpen) === "true";
   const location = useLocation();
+  const smTheme = useTheme();
 
   const handleDrawerClose = () => {
     searchParams.delete(Params.SidebarOpen);
@@ -51,6 +54,12 @@ export default function Sidebar(props: Props) {
           <CloseIcon />
         </IconButton>
       </Box>
+      <Toolbar
+        sx={{
+          height: { xs: 64, sm: 70 },
+          display: { xs: "none", sm: "block" },
+        }}
+      />
       <Divider />
       <List>
         {navItems.map(({ display, path }) => {
