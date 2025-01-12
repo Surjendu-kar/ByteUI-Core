@@ -11,7 +11,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { Params, Path } from "../../enums";
 import theme from "../../theme";
-import { useTheme } from "@emotion/react";
 
 const drawerWidth = 200;
 
@@ -24,7 +23,6 @@ export default function Sidebar(props: Props) {
   const [searchParams, setSearchParams] = useSearchParams();
   const isOpen = searchParams.get(Params.SidebarOpen) === "true";
   const location = useLocation();
-  const smTheme = useTheme();
 
   const handleDrawerClose = () => {
     searchParams.delete(Params.SidebarOpen);
