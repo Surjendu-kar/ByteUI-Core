@@ -69,36 +69,9 @@ function Home() {
         minHeight: "100dvh",
         display: "flex",
         alignItems: "center",
-        background: "#000",
         position: "relative",
-        overflow: "hidden",
       }}
     >
-      {/* Animated background gradient */}
-      <Box
-        component={motion.div}
-        animate={{
-          background: [
-            "radial-gradient(circle at 20% 20%, #1a237e 0%, transparent 50%)",
-            "radial-gradient(circle at 80% 80%, #0d47a1 0%, transparent 50%)",
-            "radial-gradient(circle at 20% 20%, #1a237e 0%, transparent 50%)",
-          ],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          opacity: 0.6,
-        }}
-      />
-
       <Container maxWidth="lg">
         <Stack
           component={motion.div}

@@ -135,7 +135,7 @@ export default function Sidebar(props: Props) {
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             width: drawerWidth,
-            background: theme.palette.background.default,
+            background: "transparent",
             color: "white",
             borderRight: 1,
             borderColor: "divider",

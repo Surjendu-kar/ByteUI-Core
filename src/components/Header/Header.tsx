@@ -30,7 +30,7 @@ function Header() {
         borderColor: "divider",
         display: "flex",
         alignItems: "center",
-        bgcolor: "background.paper",
+        bgcolor: "transparent",
         zIndex: 1100,
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
       }}
