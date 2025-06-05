@@ -121,6 +121,7 @@ export default function Sidebar(props: Props) {
             borderRight: 1,
             borderColor: "divider",
             color: theme.palette.text.primary,
+            border: "2px solid rgba(255, 255, 255, 0.1)",
           },
         }}
       >
@@ -138,6 +139,7 @@ export default function Sidebar(props: Props) {
             color: "white",
             borderRight: 1,
             borderColor: "divider",
+            border: "2px solid rgba(255, 255, 255, 0.1)",
           },
         }}
         open

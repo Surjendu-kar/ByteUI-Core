@@ -74,6 +74,7 @@ const Installation = () => {
             borderRadius: 1,
             overflow: "hidden",
             width: "100%",
+            border: "2px solid rgba(255, 255, 255, 0.1)",
           }}
         >
           <Tabs
