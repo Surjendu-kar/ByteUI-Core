@@ -1,8 +1,7 @@
-import { Stack, Button, Typography, Box, Container, Grid, IconButton } from "@mui/material";
+import { Stack, Button, Typography, Box, Container, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Path } from "../../../enums";
 import { motion } from "framer-motion";
-import GitHubIcon from '@mui/icons-material/GitHub';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import SpeedIcon from '@mui/icons-material/Speed';
 import BrushIcon from '@mui/icons-material/Brush';
