@@ -14,7 +14,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import { motion } from "framer-motion";
 import CodeIcon from '@mui/icons-material/Code';
 
-const Container = styled(Stack)(({ theme }) => ({
+const Container = styled(Stack)(() => ({
   width: "100%",
   maxWidth: "800px",
   margin: "2rem auto",
@@ -87,7 +87,7 @@ const Installation = () => {
             backdropFilter: "blur(10px)",
           }}
         >
-          <Box sx={{ p: 2, borderBottom: "1px solid rgba(255, 255, 255, 0.1)", display: "flex", alignItems: "center", gap: 1 }}>
+          <Box sx={{ p: {xs: 1, sm: 2}, borderBottom: "1px solid rgba(255, 255, 255, 0.1)", display: "flex", alignItems: "center", gap: 1 }}>
             <CodeIcon sx={{ color: "#90caf9" }} />
             <Typography variant="subtitle2" sx={{ color: "rgba(255, 255, 255, 0.9)" }}>
               Install Package
