@@ -10,8 +10,13 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { Params, Path } from "../../enums";
 import theme from "../../theme";
+import { motion } from "framer-motion";
 
 const drawerWidth = 200;
+
+const MotionListItem = motion(ListItem);
+const MotionBox = motion(Box);
+const MotionDrawer = motion(Drawer);
 
 interface Props {
   window?: () => Window;
@@ -35,8 +40,53 @@ export default function Sidebar(props: Props) {
     { display: "Card", path: Path.Cards },
   ];
 
+  const listVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { x: -20, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const mobileDrawerVariants = {
+    open: {
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
+      }
+    },
+    closed: {
+      x: -drawerWidth,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
+      }
+    }
+  };
+
   const drawer = (
-    <Box>
+    <MotionBox
+      initial="hidden"
+      animate="visible"
+      variants={listVariants}
+    >
       <Box
         sx={{
           display: { xs: "flex", sm: "none" },
@@ -45,6 +95,9 @@ export default function Sidebar(props: Props) {
         }}
       >
         <IconButton
+          component={motion.button}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
           onClick={handleDrawerClose}
           sx={{ color: theme.palette.text.primary }}
         >
@@ -52,7 +105,7 @@ export default function Sidebar(props: Props) {
         </IconButton>
       </Box>
       
-      <List sx={{ p:0 }}>
+      <List sx={{ p: 0 }}>
         {navItems.map(({ display, path }) => {
           const isSelected =
             location.pathname === `/${path}` ||
@@ -64,15 +117,21 @@ export default function Sidebar(props: Props) {
               key={display}
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <ListItem disablePadding>
+              <MotionListItem 
+                disablePadding
+                variants={itemVariants}
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
                 <ListItemButton
                   sx={{
                     bgcolor: isSelected
                       ? "rgba(255, 255, 255, 0.08)"
                       : "transparent",
+                    transition: "all 0.3s ease",
                     "&:hover": {
                       bgcolor: isSelected
-                        ? "rgba(255, 255, 255, 0.08)"
+                        ? "rgba(255, 255, 255, 0.12)"
                         : "rgba(255, 255, 255, 0.16) !important",
                     },
                     "&.MuiListItemButton-root:hover": {
@@ -80,15 +139,27 @@ export default function Sidebar(props: Props) {
                     },
                   }}
                 >
-                  <ListItemText primary={display} />
+                  <ListItemText 
+                    primary={display}
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: isSelected ? 600 : 400,
+                        background: isSelected 
+                          ? "linear-gradient(to right, #fff 20%, #90caf9 100%)"
+                          : "none",
+                        WebkitBackgroundClip: isSelected ? "text" : "none",
+                        WebkitTextFillColor: isSelected ? "transparent" : "inherit",
+                      }
+                    }}
+                  />
                 </ListItemButton>
-              </ListItem>
+              </MotionListItem>
             </Link>
           );
         })}
       </List>
       <Divider />
-    </Box>
+    </MotionBox>
   );
 
   const container =
@@ -97,7 +168,7 @@ export default function Sidebar(props: Props) {
   return (
     <>
       {/* mobile screen */}
-      <Drawer
+      <MotionDrawer
         container={container}
         variant="temporary"
         open={isOpen}
@@ -110,19 +181,42 @@ export default function Sidebar(props: Props) {
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             width: drawerWidth,
-            background: theme.palette.background.default,
-            borderRight: 1,
-            borderColor: "divider",
+            background: "rgba(13, 17, 23, 0.95)",
+            backdropFilter: "blur(10px)",
+            borderRight: "none",
             color: theme.palette.text.primary,
-            border: "2px solid rgba(255, 255, 255, 0.1)",
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
             height: "100%",
-            top: "0px"
+            top: "0px",
+            '&:before': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              bottom: 0,
+              width: '1px',
+              background: 'linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), transparent)',
+            },
+          },
+          "& .MuiBackdrop-root": {
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            backdropFilter: "blur(4px)",
           },
         }}
+        initial="closed"
+        animate={isOpen ? "open" : "closed"}
+        variants={mobileDrawerVariants}
       >
-        {drawer}
-      </Drawer>
-      {/* desktop screen */}
+        <MotionBox
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.3 }}
+        >
+          {drawer}
+        </MotionBox>
+      </MotionDrawer>
+
+      {/* desktop screen drawer remains unchanged */}
       <Drawer
         variant="permanent"
         sx={{
