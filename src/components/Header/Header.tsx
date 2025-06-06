@@ -4,22 +4,24 @@ import { useSearchParams } from "react-router-dom";
 import { Params } from "../../enums";
 import theme from "../../theme";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { Path } from "../../enums";
 // import image from "../../assets/logo-3.png";
 
 const MotionTypography = motion(Typography);
 
 function Header() {
   const [searchParams, setSearchParams] = useSearchParams();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     searchParams.set(Params.SidebarOpen, "true");
     setSearchParams(searchParams);
   };
 
-  // const handleLogoClick = () => {
-  //   navigate(Path.Home);
-  // };
+  const handleLogoClick = () => {
+    navigate(Path.Home);
+  };
 
   return (
     <Box
@@ -62,6 +64,7 @@ function Header() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
+          onClick={handleLogoClick}
           sx={{
             fontWeight: 700,
             background: "linear-gradient(to right, #fff 20%, #90caf9 100%)",
