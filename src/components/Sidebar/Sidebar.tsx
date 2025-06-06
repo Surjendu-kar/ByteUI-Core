@@ -5,7 +5,6 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
@@ -53,7 +52,6 @@ export default function Sidebar(props: Props) {
         </IconButton>
       </Box>
       
-      <Divider />
       <List sx={{ p:0 }}>
         {navItems.map(({ display, path }) => {
           const isSelected =
