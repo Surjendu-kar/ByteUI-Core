@@ -11,12 +11,15 @@ import {
 } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import CheckIcon from "@mui/icons-material/Check";
-import theme from "../../../theme";
+import { motion } from "framer-motion";
+import CodeIcon from '@mui/icons-material/Code';
 
 const Container = styled(Stack)(({ theme }) => ({
-  width: "50%",
-  margin: "1rem 0",
-  [theme.breakpoints.down("sm")]: { width: "95%" },
+  width: "100%",
+  maxWidth: "800px",
+  margin: "2rem auto",
+  padding: "0 1rem",
+  
 }));
 
 const CustomTab = styled(Tab)(() => ({
@@ -29,7 +32,7 @@ const CustomTab = styled(Tab)(() => ({
   minWidth: "auto",
   position: "relative",
   "&:hover": {
-    background: "#3d47514d",
+    background: "rgba(61, 71, 81, 0.3)",
     color: "#ffffffc9",
   },
   "&.Mui-selected": {
@@ -41,10 +44,12 @@ const CustomTab = styled(Tab)(() => ({
       left: 0,
       width: "100%",
       height: "2px",
-      backgroundColor: "white",
+      background: "linear-gradient(to right, #fff 20%, #90caf9 100%)",
     },
   },
 }));
+
+const MotionPaper = motion(Paper);
 
 const Installation = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -67,16 +72,28 @@ const Installation = () => {
   return (
     <Stack sx={{ width: "100%", alignItems: "center" }}>
       <Container>
-        <Paper
+        <MotionPaper
+          initial={{ scale: 0.95, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.4 }}
           sx={{
             bgcolor: "rgba(0, 0, 0, 0.87)",
             color: "white",
-            borderRadius: 1,
+            borderRadius: 2,
             overflow: "hidden",
             width: "100%",
-            border: "2px solid rgba(255, 255, 255, 0.1)",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
+            backdropFilter: "blur(10px)",
           }}
         >
+          <Box sx={{ p: 2, borderBottom: "1px solid rgba(255, 255, 255, 0.1)", display: "flex", alignItems: "center", gap: 1 }}>
+            <CodeIcon sx={{ color: "#90caf9" }} />
+            <Typography variant="subtitle2" sx={{ color: "rgba(255, 255, 255, 0.9)" }}>
+              Install Package
+            </Typography>
+          </Box>
+          
           <Tabs
             value={activeTab}
             onChange={handleTabChange}
@@ -98,19 +115,24 @@ const Installation = () => {
               justifyContent: "space-between",
               alignItems: "center",
               p: 2,
+              background: "rgba(0, 0, 0, 0.3)",
             }}
           >
             <Typography
               component="code"
               sx={{
                 fontFamily: "monospace",
-                fontSize: "14px",
-                color: theme.palette.text.secondary,
+                fontSize: "15px",
+                color: "#90caf9",
+                letterSpacing: 0.5,
               }}
             >
-              {activeTab === 0 ? npmCommand : yarnCommand}
+              $ {activeTab === 0 ? npmCommand : yarnCommand}
             </Typography>
             <IconButton
+              component={motion.button}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               onClick={handleCopy}
               size="small"
               sx={{
@@ -119,16 +141,17 @@ const Installation = () => {
                   backgroundColor: "rgba(255, 255, 255, 0.1)",
                 },
                 ml: 1,
+                transition: "all 0.3s ease",
               }}
             >
               {copied ? (
-                <CheckIcon sx={{ fontSize: 16 }} />
+                <CheckIcon sx={{ fontSize: 18 }} />
               ) : (
-                <ContentCopyIcon sx={{ fontSize: 16 }} />
+                <ContentCopyIcon sx={{ fontSize: 18 }} />
               )}
             </IconButton>
           </Box>
-        </Paper>
+        </MotionPaper>
       </Container>
     </Stack>
   );
