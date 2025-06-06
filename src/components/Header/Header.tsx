@@ -1,4 +1,4 @@
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useSearchParams } from "react-router-dom";
 import { Params } from "../../enums";
@@ -6,6 +6,7 @@ import theme from "../../theme";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Path } from "../../enums";
+import { useEffect, useState } from "react";
 // import image from "../../assets/logo-3.png";
 
 const MotionTypography = motion(Typography);
@@ -13,6 +14,18 @@ const MotionTypography = motion(Typography);
 function Header() {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const theme = useTheme();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleDrawerToggle = () => {
     searchParams.set(Params.SidebarOpen, "true");
@@ -35,9 +48,12 @@ function Header() {
         borderColor: "divider",
         display: "flex",
         alignItems: "center",
-        bgcolor: "transparent",
+        bgcolor: isScrolled ? 'rgba(18, 18, 18, 0.8)' : 'transparent',
+        backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+        WebkitBackdropFilter: isScrolled ? 'blur(10px)' : 'none',
+        transition: 'all 0.3s ease-in-out',
         zIndex: 1200,
-        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+        boxShadow: isScrolled ? "0 0 10px rgba(0, 0, 0, 0.2)" : "0 0 10px rgba(0, 0, 0, 0.1)",
       }}
     >
       <IconButton
