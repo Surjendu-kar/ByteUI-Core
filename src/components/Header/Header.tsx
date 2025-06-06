@@ -2,7 +2,6 @@ import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useSearchParams } from "react-router-dom";
 import { Params } from "../../enums";
-import theme from "../../theme";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Path } from "../../enums";
