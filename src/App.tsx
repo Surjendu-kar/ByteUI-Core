@@ -27,27 +27,30 @@ const ContentWrapper = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   overflow: "auto",
   paddingTop: "5rem",
+  minHeight: "100vh",
   [theme.breakpoints.down("sm")]: {
     paddingTop: "3rem",
   },
 }));
 
-// Component for pages with full layout
-const PagesWithLayout = () => (
+// Component for pages with header and sidebar
+const PagesWithHeaderAndSidebar = () => (
   <>
     <Header />
-    <Sidebar />
-    <MainWrapper>
-      <ContentWrapper>
-        <Routes>
-          <Route element={<Installation />} path={Path.Installation} />
-          <Route element={<Buttons />} path={Path.Buttons} />
-          <Route element={<Loaders />} path={Path.Loaders} />
-          <Route element={<Cards />} path={Path.Cards} />
-        </Routes>
-        <Footer />
-      </ContentWrapper>
-    </MainWrapper>
+    <Box sx={{ display: 'flex' }}>
+      <Sidebar />
+      <MainWrapper>
+        <ContentWrapper>
+          <Routes>
+            <Route element={<Installation />} path={Path.Installation} />
+            <Route element={<Buttons />} path={Path.Buttons} />
+            <Route element={<Loaders />} path={Path.Loaders} />
+            <Route element={<Cards />} path={Path.Cards} />
+          </Routes>
+          <Footer />
+        </ContentWrapper>
+      </MainWrapper>
+    </Box>
   </>
 );
 
@@ -56,7 +59,7 @@ function App() {
     <Layout>
       <Routes>
         <Route element={<Home />} path={Path.Home} />
-        <Route element={<PagesWithLayout />} path="/*" />
+        <Route element={<PagesWithHeaderAndSidebar />} path="/*" />
       </Routes>
     </Layout>
   );

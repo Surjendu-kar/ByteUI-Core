@@ -52,14 +52,9 @@ export default function Sidebar(props: Props) {
           <CloseIcon />
         </IconButton>
       </Box>
-      <Toolbar
-        sx={{
-          height: { xs: 64, sm: 70 },
-          display: { xs: "none", sm: "block" },
-        }}
-      />
+      
       <Divider />
-      <List>
+      <List sx={{ p:0 }}>
         {navItems.map(({ display, path }) => {
           const isSelected =
             location.pathname === `/${path}` ||
@@ -122,6 +117,8 @@ export default function Sidebar(props: Props) {
             borderColor: "divider",
             color: theme.palette.text.primary,
             border: "2px solid rgba(255, 255, 255, 0.1)",
+            height: "100%",
+            top: "0px"
           },
         }}
       >
@@ -139,7 +136,9 @@ export default function Sidebar(props: Props) {
             color: "white",
             borderRight: 1,
             borderColor: "divider",
-            border: "2px solid rgba(255, 255, 255, 0.1)",
+            zIndex: 1100,
+            height: "calc(100% - 70px)",
+            top: "70px",
           },
         }}
         open
